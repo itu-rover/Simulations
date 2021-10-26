@@ -13,6 +13,8 @@ rover_21_robotic_arm ise alt yürürle beraber robot kol içermektedir. burada k
 Simülasyonu çalıştırmak için öncellikle şu eklenili paketlere ihtiyacnız var 
 1. [https://github.com/issaiass/realsense_gazebo_plugin.git](https://github.com/issaiass/realsense_gazebo_plugin.git)
 2. [https://github.com/ros-visualization/interactive_marker_twist_server.git](https://github.com/ros-visualization/interactive_marker_twist_server.git)
+3. `sudo apt install ros-melodic-twist-mux`
+4. `sudo apt install ros-melodic-multimaster-launch`
 
 bunlardan birinci paket realsense için ikinci ise alt yürürü joystik olmadan hareket ettirmek için gerekli. Bunlar yüklendikten sonra `catkin_make` yapılır daha sonra `source devel/setup.bash` yapılır.
 
@@ -40,15 +42,15 @@ D435'li simülasyonu çalıştırmak bu simülasyonun çalıştırılması için
 
 Sadece Gazebo için:
 
-`roslaunch rover_22_description_d435 gazebo.launch`
+`roslaunch rover_21_description_d435 gazebo.launch`
 
 Sadece Rviz için:
 
-`roslaunch rover_22_description_d435 d435_rviz.launch`
+`roslaunch rover_21_description_d435 d435_rviz.launch`
 
 Hem Rviz Hem Gazebo için:
 
-`roslaunch rover_22_description_d435 rviz_and_gazebo.launch`
+`roslaunch rover_21_description_d435 rviz_and_gazebo.launch`
 
 çalıştırılmalıdır eğer Rviz configurasyonu değiştirlip kaydedilmek istenirse ilgili paketin içinde yer alan rviz klasörüne "urdf.rviz" adıyla rviz konfigürasyonu kaydedilebilir. 
 
@@ -58,15 +60,15 @@ ZED'li simulasyon için test edildiği kadarıyla herhangi ek paket kulmasına g
 
 Sadece Gazebo için:
 
-`roslaunch rover_22_description_zed gazebo.launch`
+`roslaunch rover_21_description_zed gazebo.launch`
 
 Sadece Rviz için:
 
-`roslaunch rover_22_description_zed zed_rviz.launch`
+`roslaunch rover_21_description_zed zed_rviz.launch`
 
 Hem Rviz Hem Gazebo için:
 
-`roslaunch rover_22_description_zed rviz_and_gazebo.launch`
+`roslaunch rover_21_description_zed rviz_and_gazebo.launch`
 
 çalıştırılmalıdır rviz konfigurasyonu kayıt işi d435 simülasyonu ile aynıdır.
 
