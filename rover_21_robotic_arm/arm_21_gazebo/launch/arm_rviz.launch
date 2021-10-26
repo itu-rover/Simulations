@@ -1,0 +1,8 @@
+<launch>
+
+    <!-- rviz launch file if you want new rviz configuration you need to save as urdf.rviz on rviz folder-->
+    <arg name="gui" default="True" />
+    <param name="use_gui" value="$(arg gui)" />
+    <node name="rviz" pkg="rviz" type="rviz" args="-d $(find arm_21_gazebo)/rviz/urdf.rviz" required="true" />
+
+</launch>

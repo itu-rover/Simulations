@@ -1,0 +1,13 @@
+gazebo_ros_control/pid_gains:
+  joint_1: {p: 100.0, i: 5.0, d: 15.0}
+  joint_2: {p: 100.0, i: 5.0, d: 15.0}
+  joint_3: {p: 80.0, i: 5.0, d: 10.0}
+  joint_4: {p: 80.0, i: 5.0, d: 10.0}
+  joint_5: {p: 80.0, i: 5.0, d: 10.0}
+  #joint_6: {p: 100.0, i: 10.0, d: 10.0}
+  #joint_left: {p: 1.0, i: 0.0, d: 1.0}
+  #joint_right: {p: 1.0, i: 0.0, d: 1.0}
+  #left_front_joint: {p: 10.0, i: 5.0, d: 15.0}
+  #right_front_joint: {p: 10.0, i: 5.0, d: 15.0}
+  #left_rear_joint: {p: 10.0, i: 5.0, d: 15.0}
+  #right_rear_joint: {p: 10.0, i: 5.0, d: 15.0}

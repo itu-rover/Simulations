@@ -1,0 +1,7 @@
+<launch>
+
+    <arg name="gui" default="True" />
+    <param name="use_gui" value="$(arg gui)" />
+    <node name="rviz" pkg="rviz" type="rviz" args="-d $(find rover_21_description_zed)/rviz/urdf.rviz" required="true" />
+    
+    </launch>
