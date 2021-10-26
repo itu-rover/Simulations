@@ -1,9 +1,9 @@
 # Simulations
 ## Giriş 
 Bu repo temelde 2 tür simülasyon barındırmaktadır rover_21_descriptions sadece Alt yürüleri içermektede ve 3 tip araç bulunmaktadır bunlar:
--ZED'li alt yürür
--D435'lü yürür
--Velodyne Lidarlı yürür
+- ZED'li alt yürür
+- D435'lü yürür
+- Velodyne Lidarlı yürür
 
 --------------------------------------------------------------------------------------------------------------------------
 
@@ -74,4 +74,5 @@ Hem Rviz Hem Gazebo için:
 Velodyne'lı pake içinse sadece gazebo bulunmakta.
 
 Gazebo için:
+
 `roslaunch rover_21_description_velodyne gazebo.launch`
