@@ -15,6 +15,7 @@ Simülasyonu çalıştırmak için öncellikle şu eklenili paketlere ihtiyacnı
 2. [https://github.com/ros-visualization/interactive_marker_twist_server.git](https://github.com/ros-visualization/interactive_marker_twist_server.git)
 3. `sudo apt install ros-melodic-twist-mux`
 4. `sudo apt install ros-melodic-multimaster-launch`
+5. `sudo apt install ros-melodic-joy`
 
 bunlardan birinci paket realsense için ikinci ise alt yürürü joystik olmadan hareket ettirmek için gerekli. Bunlar yüklendikten sonra `catkin_make` yapılır daha sonra `source devel/setup.bash` yapılır.
 
