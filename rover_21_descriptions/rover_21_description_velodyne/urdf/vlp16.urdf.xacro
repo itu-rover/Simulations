@@ -1,6 +1,6 @@
-<?xml version="1.0"?>
+<?xml version="1.0" encoding="utf-8"?>
 
-<robot xmlns:xacro="http://ros.org/wiki/xacro" name="vlp_16_sensor">
+<robot name="vlp_16_sensor" xmlns:xacro="http://ros.org/wiki/xacro">
 
 	<xacro:property name="M_PI" value="3.1415926535897931" />	
 
