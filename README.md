@@ -1,6 +1,6 @@
 # Simulations
 ## Giriş 
-Bu repo temelde 2 tür simülasyon barındırmaktadır rover_21_descriptions sadece Alt yürüleri içermektede ve 3 tip araç bulunmaktadır bunlar:
+Bu repo temelde 2 tür simülasyon barındırmaktadır rover_21_descriptions sadece Alt yürüleri içermekte ve 3 tip araç bulunmaktadır bunlar:
 - ZED'li alt yürür
 - D435'lü yürür
 - Velodyne Lidarlı yürür
@@ -74,8 +74,16 @@ Hem Rviz Hem Gazebo için:
 çalıştırılmalıdır rviz konfigurasyonu kayıt işi d435 simülasyonu ile aynıdır.
 
 ----------------------------------------------------------------------------------------------------------------------------------------------
-Velodyne'lı pake içinse sadece gazebo bulunmakta.
+Velodyne'lı paket içinse öncelikle şu repodan [https://bitbucket.org/DataspeedInc/velodyne_simulator.git](https://bitbucket.org/DataspeedInc/velodyne_simulator.git) **velodyne_gazebo_plugins** paketi src klasörüne indirilmeli. Ardından `catkin_make` yapılmalı sonrasında `source devel/setup.bash` yapıldıktan sonra.
 
 Gazebo için:
 
 `roslaunch rover_21_description_velodyne gazebo.launch`
+
+Sadece Rviz için:
+
+`roslaunch rover_21_description_velodyne velodyne_rviz.launch`
+
+Hem Rviz Hem Gazebo için:
+
+`roslaunch rover_21_description_velodyne rviz_and_gazebo.launch`
