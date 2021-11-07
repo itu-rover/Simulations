@@ -4,10 +4,13 @@
     <arg name="robot_namespace" value="rover_21_description_velodyne"/>
   </include>
 
-  <include
+
+  <!--include
     file="$(find gazebo_ros)/launch/empty_world.launch">
     <arg name="paused" value="false"/>
-  </include>
+  </include--> <!-- uncomment if you want empty world-->
+
+  <include file="$(find marsyard)/launch/marsyard.launch"/> <!-- custom marsyard if you want empty world comment this line-->
 
   <node
     name="tf_footprint_base"
@@ -21,7 +24,7 @@
     name="spawn_model"
     pkg="gazebo_ros"
     type="spawn_model"
-    args="-z 0.3 -urdf -param robot_description -model rover_21_description_velodyne"
+    args="-z 1.8 -urdf -param robot_description -model rover_21_description_velodyne"
     output="screen" />
 
   <node
