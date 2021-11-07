@@ -97,3 +97,5 @@ Bu paket araçların spawnlanacağı mars yüzeyini içermekte be bunun çalış
 NOT: bu paketin içindeki launch dosyaları simülasyon dosyaları tarafından otomatik çağırlmakta bu pakette değişliklik yapmanıza gerek olmayacaktır. Ancak bir sebepten ötürü harita değiştirmek isterseniz gazebo.launch veya arm_gazebo.launch dosyalarını editleyebilirsiniz.
 
 NOT 2: Eğer performans sıkıntı yaşarsanız haritalarda bana ulaşın.
+
+NOT 3: Git 100 MB fazla dosya kabul etmediği için marsyard paektinin içinde olması gereken marsyard_Grid.dae dosyası pushlanamamıştır onun için şu linkten indiriniz [https://drive.google.com/file/d/1aWOfouisiNwRkL-8zYnf5MR6MdPOmhc0/view?usp=sharing](https://drive.google.com/file/d/1aWOfouisiNwRkL-8zYnf5MR6MdPOmhc0/view?usp=sharing)
