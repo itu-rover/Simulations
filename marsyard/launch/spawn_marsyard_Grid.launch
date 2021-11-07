@@ -1,0 +1,5 @@
+<launch>
+  <param command="$(find xacro)/xacro --inorder '$(find marsyard)/urdf/marsyard_Grid.urdf.xacro'" name="marsyard_Grid_description" />
+
+  <node args="-param marsyard_Grid_description -urdf -model marsyard_Grid" name="spawn_marsyard_Grid" pkg="gazebo_ros" respawn="false" type="spawn_model" />
+</launch>

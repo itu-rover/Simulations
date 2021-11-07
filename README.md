@@ -87,3 +87,13 @@ Sadece Rviz için:
 Hem Rviz Hem Gazebo için:
 
 `roslaunch rover_21_description_velodyne rviz_and_gazebo.launch`
+
+-----------------------------------------------------------------------------------------------
+## marsyard
+-----------------------------------------------------------------------------------------------
+Bu paket araçların spawnlanacağı mars yüzeyini içermekte be bunun çalıştırılması için ek bir pakete ihtiyaç vardır önce onu kurunuz.
+[https://github.com/david0429/blender_gazebo.git](https://github.com/david0429/blender_gazebo.git) bu paket kurulduktan sonra marsyardı kullanabilirsiniz.
+
+NOT: bu paketin içindeki launch dosyaları simülasyon dosyaları tarafından otomatik çağırlmakta bu pakette değişliklik yapmanıza gerek olmayacaktır. Ancak bir sebepten ötürü harita değiştirmek isterseniz gazebo.launch veya arm_gazebo.launch dosyalarını editleyebilirsiniz.
+
+NOT 2: Eğer performans sıkıntı yaşarsanız haritalarda bana ulaşın.
