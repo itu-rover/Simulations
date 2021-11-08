@@ -98,4 +98,4 @@ NOT: bu paketin içindeki launch dosyaları simülasyon dosyaları tarafından o
 
 NOT 2: Eğer performans sıkıntı yaşarsanız haritalarda bana ulaşın.
 
-NOT 3: Git 100 MB fazla dosya kabul etmediği için marsyard paektinin içinde olması gereken marsyard_Grid.dae dosyası pushlanamamıştır onun için şu linkten indiriniz [https://drive.google.com/file/d/1aWOfouisiNwRkL-8zYnf5MR6MdPOmhc0/view?usp=sharing](https://drive.google.com/file/d/1aWOfouisiNwRkL-8zYnf5MR6MdPOmhc0/view?usp=sharing)
+NOT 3: GIT LFS ile dae pushlayamam sorunu çzülmüştür.
