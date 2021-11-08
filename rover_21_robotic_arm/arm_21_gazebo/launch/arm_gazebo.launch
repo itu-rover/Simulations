@@ -20,6 +20,13 @@
     args="-z 1.8 -x -0.5 -urdf -param robot_description -model arm_21_gazebo"
     output="screen" />
 
+<node
+    name="spawn_panel"
+    pkg="gazebo_ros"
+    type="spawn_model"
+    args="-file $(find panel)/robots/panel.urdf -urdf -x 1.1 -z 2.2 -Y -1.57 -model panel"
+    output="screen" />
+
     <rosparam command="load" file="$(find rover_21_description)/config/control.yaml" /> <!-- load rover alt yurur control params-->
     
     <node name="controller_spawner" pkg="controller_manager" type="spawner"
