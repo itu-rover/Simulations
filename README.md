@@ -98,4 +98,4 @@ NOT: bu paketin içindeki launch dosyaları simülasyon dosyaları tarafından o
 
 NOT 2: Eğer performans sıkıntı yaşarsanız haritalarda bana ulaşın.
 
-NOT 3: GIT LFS ile dae pushlayamam sorunu çzülmüştür.
+NOT 3: GIT LFS ile dae pushlayamama sorunu çözülmüştür.
