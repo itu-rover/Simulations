@@ -11,9 +11,6 @@ from geometry_msgs.msg import Twist
 """ Bu kod ileri kinamtik sürüş için yapılmıştır yani kolun eklemlerine ayrı ayrı joystick verileri basılmaktadır hiç bir ters kinematik kodu içermemektedir."""
 """Bu Simulasyonlar için ekleme yapılmıştır DS4 kolunda R2 de mod geçişi olur ve Alt Yürüre geçer HERHANGİ BİR OTONOM HARAKET YOKTUR SİMÜLASYONLARIN 
 KONTROLCÜ TESTLERİ İÇİN YAZILMIŞTIR BU KOD ve suan çok ham haldedir en yakın zamanda C++ ile yazılmış daha hoş bir kod yazılacaktır."""
-#global joint_names, detlta_thetas
-#joint_angles = [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0]
-#delta_thetas = [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0]
 
 arm = F_ARM()
 joy_msg = JOY()
@@ -42,6 +39,11 @@ def joy_callback(data):
     arm.delta_thetas[4] = -data.axes[7] * 0.003
     arm.delta_thetas[5] = data.axes[6] * 0.06
     joy_msg.buttons[7] = data.buttons[7]
+
+    # Kare parmakları kapamak Daire parmakları açmak
+    arm.gripper_delta_thetas[0] = (data.buttons[1] - data.buttons[3]) * 0.003  # right finger 
+    arm.gripper_delta_thetas[1] = (-data.buttons[1] + data.buttons[3]) * 0.003 # left finger
+
     if data.buttons[4] != 0:
         arm.delta_thetas[6] = data.buttons[4] * 0.004
 
@@ -92,8 +94,8 @@ if __name__ == "__main__":
             first_stage = False # buraya kadar
         if not second_part:
             
-            rospy.loginfo_throttle(1,"Robot Arm: joint1: %s, joint2: %s, joint3: %s, joint4: %s, joint5: %s, joint6: %s" 
-            %(arm.joint_angles[0], arm.joint_angles[1], arm.joint_angles[2], arm.joint_angles[3], arm.joint_angles[4], arm.joint_angles[5]))
+            rospy.loginfo_throttle(1,"Robot Arm: joint1: %s, joint2: %s, joint3: %s, joint4: %s, joint5: %s, joint6: %s, gripper_left: %s, gripper_right: %s" 
+            %(arm.joint_angles[0], arm.joint_angles[1], arm.joint_angles[2], arm.joint_angles[3], arm.joint_angles[4], arm.joint_angles[5], arm.gripper_angles[0], arm.gripper_angles[1]))
 
             arm.joint_angles[0] += arm.delta_thetas[0]
             arm.joint_angles[1] += arm.delta_thetas[1]
@@ -102,12 +104,19 @@ if __name__ == "__main__":
             arm.joint_angles[4] += arm.delta_thetas[4]
             arm.joint_angles[5] += arm.delta_thetas[5]
 
+            arm.gripper_angles[0] += arm.gripper_delta_thetas[0]
+            arm.gripper_angles[1] += arm.gripper_delta_thetas[1]
+
             joint_1_publisher.publish(arm.joint_angles[0])
             joint_2_publisher.publish(arm.joint_angles[1])
             joint_3_publisher.publish(arm.joint_angles[2])
             joint_4_publisher.publish(arm.joint_angles[3])
             joint_5_publisher.publish(arm.joint_angles[4])
             joint_6_publisher.publish(arm.joint_angles[5])
+
+            right_finger_publisher.publish(arm.gripper_angles[0])
+            left_finger_publisher.publish(arm.gripper_angles[1])
+
             if counter == 50: #Serial'e gönderilen açı verileri.
                 axis[0] = arm.joint_angles[0]
                 axis[1] = arm.joint_angles[1]
@@ -122,10 +131,6 @@ if __name__ == "__main__":
 
             counter += 1
 
-        
-
-            right_finger_publisher.publish(arm.joint_angles[6])
-            left_finger_publisher.publish(arm.joint_angles[6])
             rate.sleep()
 
             

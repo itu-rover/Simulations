@@ -1,0 +1,9 @@
+<launch>
+
+<rosparam file="$(find panel_base_description)/launch/controller.yaml" command="load"/>
+<node args="Rev38_position_controller Slider39_position_controller Slider40_position_controller joint_state_controller " name="controller_spawner" ns="panel_base" output="screen" pkg="controller_manager" respawn="false" type="spawner"/>
+<node name="panel_state_publisher" output="screen" pkg="robot_state_publisher" respawn="false" type="robot_state_publisher">
+  <remap from="/joint_states" to="/panel_base/joint_states"/>
+</node>
+
+</launch>

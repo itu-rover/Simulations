@@ -7,7 +7,8 @@ class F_ARM(object):
     def __init__(self):
         self.joint_angles = [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0]
         self.delta_thetas = [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0]
-        self.link_lenghts = [26.5, 28.1831, 20.0]
+        self.gripper_angles = [0.0, 0.0]
+        self.gripper_delta_thetas = [0.0, 0.0, 0.0, 0.0]
 
 class JOY(object): # joy classı tuşları ve axisleri tutuyor ama ana kodda işlevleri oldukça düşük sadece ileri kinematik için hız değerleri için kullanılıyor.
 

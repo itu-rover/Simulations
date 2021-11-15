@@ -26,12 +26,12 @@ rover_arm_controller:
 
 rover_arm_right_finger:
     type: position_controllers/JointPositionController
-    joint: gripper_right_joint
+    joint: joint_right
     pid: {p: 1000,  d: 10, i: 0.1, i_clamp: 1}
 
 rover_arm_left_finger:
     type: position_controllers/JointPositionController
-    joint: gripper_left_joint
+    joint: joint_left
     pid: {p: 1000,  d: 10, i: 0.1, i_clamp: 1}
 
 rover_arm_joint_1:
