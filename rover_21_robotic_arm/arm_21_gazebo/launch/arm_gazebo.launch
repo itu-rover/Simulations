@@ -3,29 +3,35 @@
         <arg name="robot_namespace" value="rover_21_description"/>
       </include>
 <!-- launch empty world -->
-<!--include file="$(find gazebo_ros)/launch/empty_world.launch">
+<include file="$(find gazebo_ros)/launch/empty_world.launch">
     <arg name="paused" value="true"/>
-</include-->
-<include file="$(find marsyard)/launch/marsyard.launch"/> <!-- launch custom world if you want custom world un comment that line-->
+</include>
+<!--include file="$(find marsyard)/launch/marsyard.launch"/--> <!-- launch custom world if you want custom world un comment that line-->
 
 <!-- send urdf to the parameter server -->
 <param name="robot_description" command="xacro --inorder $(find arm_21_gazebo)/urdf/arm_21_gazebo.urdf.xacro"/>
 <rosparam file="$(find arm_21_gazebo)/config/ros_control_params.yaml" command="load"/> <!-- load arm pid gains-->
+
+<param command="$(find xacro)/xacro $(find panel_base_description)/urdf/panel_base.xacro" name="panel_description"/>
 
 <!-- spawn robotic arm -->
 <node
     name="spawn_model"
     pkg="gazebo_ros"
     type="spawn_model"
-    args="-z 1.8 -x -0.5 -urdf -param robot_description -model arm_21_gazebo"
+    args="-z 0.35 -x -0.5 -urdf -param robot_description -model arm_21_gazebo"
     output="screen" />
 
-<node
+    <!-- Old panel if you want that old one uncomment this-->
+<!--node
     name="spawn_panel"
     pkg="gazebo_ros"
     type="spawn_model"
     args="-file $(find panel)/robots/panel.urdf -urdf -x 1.1 -z 2.2 -Y -1.57 -model panel"
-    output="screen" />
+    output="screen" /-->
+
+    <!-- New panel-->
+<node args="-z 0.5 -x 2.0 -param panel_description -urdf -model panel_base" name="spawn_urdf" pkg="gazebo_ros" type="spawn_model"/>
 
     <rosparam command="load" file="$(find rover_21_description)/config/control.yaml" /> <!-- load rover alt yurur control params-->
     
