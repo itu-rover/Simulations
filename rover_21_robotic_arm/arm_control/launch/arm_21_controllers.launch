@@ -1,28 +1,28 @@
 <?xml version="1.0"?>
 <launch>
-
-  <!-- Robot state publisher -->
-  <node pkg="robot_state_publisher" type="robot_state_publisher" name="arm_robot_state_publisher">
-    <param name="publish_frequency" type="double" value="50.0" />
-    <param name="tf_prefix" type="string" value="" />
-  </node>
-
-  <!-- Fake Calibration -->
-  <node pkg="rostopic" type="rostopic" name="fake_joint_calibration"
-        args="pub /calibrated std_msgs/Bool true" />
+      <!-- Robot state publisher -->
+    <node pkg="robot_state_publisher" type="robot_state_publisher" name="arm_robot_state_publisher">
+      <param name="publish_frequency" type="double" value="50.0" />
+      <param name="tf_prefix" type="string" value="" />
+    </node>
   
-  <!-- joint_state_controller -->
-  <rosparam file="$(find arm_control)/config/joint_state_controller.yaml" command="load"/>
-  <node name="joint_state_controller_spawner" pkg="controller_manager" type="controller_manager" args="spawn joint_state_controller" respawn="false" output="screen"/>
+    <!-- Fake Calibration -->
+    <node pkg="rostopic" type="rostopic" name="fake_joint_calibration"
+          args="pub /calibrated std_msgs/Bool true" />
+    
+    <!-- joint_state_controller -->
+    <rosparam file="$(find arm_control)/config/joint_state_controller.yaml" command="load"/>
+    <node name="joint_state_controller_spawner" pkg="controller_manager" type="controller_manager" args="spawn joint_state_controller" respawn="false" output="screen"/>
+  
+  
+    <!-- manually created controllers of robotic arm -->
+    <rosparam file="$(find arm_control)/config/arm21_controller.yaml" command="load"/>
+    <node name="arm_controller_spawner" pkg="controller_manager" type="controller_manager" args="spawn rover_arm_controller" respawn="false" output="screen"/>
 
-
-  <!-- manually created controllers of robotic arm -->
-  <!--rosparam file="$(find arm_control)/config/arm_controller.yaml" command="load"/>
-  <node name="arm_controller_spawner" pkg="controller_manager" type="controller_manager" args="spawn rover_arm_controller" respawn="false" output="screen"/-->
 
   <!-- controllers for end effector fingers -->
   <rosparam file="$(find arm_control)/config/arm21_controller.yaml" command="load"/>
-  <node name="finger_controller_spawner" pkg="controller_manager" type="controller_manager" args="spawn rover_arm_joint_1 rover_arm_joint_2 rover_arm_joint_3 rover_arm_joint_4 rover_arm_joint_5 rover_arm_joint_6 rover_arm_right_finger rover_arm_left_finger" respawn="false" output="screen"/>
+  <node name="finger_controller_spawner" pkg="controller_manager" type="controller_manager" args="spawn rover_arm_right_finger rover_arm_left_finger" respawn="false" output="screen"/>
 
 
  <!-- don't know if it's a necessary/ got from ur repo -->
