@@ -5,16 +5,16 @@
 <!-- launch empty world -->
 <include file="$(find gazebo_ros)/launch/empty_world.launch">
     <arg name="paused" value="true"/>
-</include>
+</include> 
 
 <!-- launch custom world if you want custom world un comment that line-->
-<!-- <include file="$(find marsyard)/launch/marsyard.launch"/>  -->
+<!-- <include file="$(find marsyard)/launch/marsyard.launch"/>   -->
 
 <!-- send urdf to the parameter server -->
 <param name="robot_description" command="xacro --inorder $(find arm_21_gazebo)/urdf/arm_21_gazebo.urdf.xacro"/>
 <rosparam file="$(find arm_21_gazebo)/config/ros_control_params.yaml" command="load"/> <!-- load arm pid gains-->
 
-<param command="$(find xacro)/xacro $(find panel_base_description)/urdf/panel_base.xacro" name="panel_description"/> 
+<param command="$(find xacro)/xacro $(find panel_base_description)/urdf/panel_base.xacro" name="panel_description"/>  
 
 <!-- spawn robotic arm -->
 <node
@@ -33,7 +33,7 @@
     output="screen" /-->
 
     <!-- New panel-->
-<node args="-z 1.5 -x 2.0 -param panel_description -urdf -model panel_base" name="spawn_urdf" pkg="gazebo_ros" type="spawn_model"/>
+<node args="-z 1.5 -x 2.0 -param panel_description -urdf -model panel_base" name="spawn_urdf" pkg="gazebo_ros" type="spawn_model"/> 
 
     <rosparam command="load" file="$(find rover_21_description)/config/control.yaml" /> <!-- load rover alt yurur control params-->
     
