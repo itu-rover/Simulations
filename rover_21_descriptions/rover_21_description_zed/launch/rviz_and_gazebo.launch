@@ -3,4 +3,4 @@
     <include file="$(find rover_21_description_zed)/launch/gazebo.launch"/>
     <include file="$(find rover_21_description_zed)/launch/zed_rviz.launch"/>
     
-    </launch>
+</launch>
