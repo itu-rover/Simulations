@@ -1,0 +1,3 @@
+[submodule "Simulations/blender_gazebo"]
+	path = Simulations/blender_gazebo
+	url = https://github.com/Kokjix/blender_gazebo.git
