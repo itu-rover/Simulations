@@ -1,5 +1,12 @@
 # Simulations
-## Giriş 
+## Giriş
+
+Marsyard paketi için blender_gazebo adında bir paket lazımdır fakat bu başka bir repodan submodule olarak çekilmektedir o yüzden bu repo aşagodaki kod ile workspace'e clonelanmalı.
+
+```
+git clone --recurse-submodules https://github.com/itu-rover/Simulations.git
+```
+
 Bu repo temelde 2 tür simülasyon barındırmaktadır rover_21_descriptions sadece Alt yürüleri içermekte ve 3 tip araç bulunmaktadır bunlar:
 - ZED'li alt yürür
 - D435'lü yürür
@@ -91,8 +98,11 @@ Hem Rviz Hem Gazebo için:
 -----------------------------------------------------------------------------------------------
 ## marsyard
 -----------------------------------------------------------------------------------------------
-Bu paket araçların spawnlanacağı mars yüzeyini içermekte be bunun çalıştırılması için ek bir pakete ihtiyaç vardır önce onu kurunuz.
-[https://github.com/david0429/blender_gazebo.git](https://github.com/david0429/blender_gazebo.git) bu paket kurulduktan sonra marsyardı kullanabilirsiniz.
+Marsyard paketi için blender_gazebo adında bir paket lazımdır fakat bu başka bir repodan submodule olarak çekilmektedir o yüzden bu repo aşagodaki kod ile workspace'e clonelanmalı.
+
+```
+git clone --recurse-submodules https://github.com/itu-rover/Simulations.git
+```
 
 NOT: bu paketin içindeki launch dosyaları simülasyon dosyaları tarafından otomatik çağırlmakta bu pakette değişliklik yapmanıza gerek olmayacaktır. Ancak bir sebepten ötürü harita değiştirmek isterseniz gazebo.launch veya arm_gazebo.launch dosyalarını editleyebilirsiniz.
 
