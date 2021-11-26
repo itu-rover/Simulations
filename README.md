@@ -13,7 +13,14 @@ Bu repo temelde 2 tür simülasyon barındırmaktadır rover_21_descriptions sad
 - Velodyne Lidarlı yürür
 
 --------------------------------------------------------------------------------------------------------------------------
+## IMU ve GPS gibi verilerin alınması
+Bu verilerin alınması için kurulması gerek paketler aşağıda komut konsola girildiği zaman kurulacaktır.
 
+```
+sudo apt install ros-melodic-hector-gazebo-*
+```
+
+-----------------------------------------------------------------------------------------------------------------
 rover_21_robotic_arm ise alt yürürle beraber robot kol içermektedir. burada kol üstünde 2 fpv kamera bir tane d435 bulunmaktadır.
 
 ## rover_21_robotic_arm'ın çalıştırılması
