@@ -18,11 +18,9 @@ rover_21_robotic_arm ise alt yürürle beraber robot kol içermektedir. burada k
 
 ## rover_21_robotic_arm'ın çalıştırılması
 Simülasyonu çalıştırmak için öncellikle şu eklenili paketlere ihtiyacnız var 
-1. [https://github.com/issaiass/realsense_gazebo_plugin.git](https://github.com/issaiass/realsense_gazebo_plugin.git)
-2. [https://github.com/ros-visualization/interactive_marker_twist_server.git](https://github.com/ros-visualization/interactive_marker_twist_server.git)
-3. `sudo apt install ros-melodic-twist-mux`
-4. `sudo apt install ros-melodic-multimaster-launch`
-5. `sudo apt install ros-melodic-joy`
+1. `sudo apt install ros-melodic-twist-mux`
+2. `sudo apt install ros-melodic-multimaster-launch`
+3. `sudo apt install ros-melodic-joy`
 
 bunlardan birinci paket realsense için ikinci ise alt yürürü joystik olmadan hareket ettirmek için gerekli. Bunlar yüklendikten sonra `catkin_make` yapılır daha sonra `source devel/setup.bash` yapılır.
 
@@ -46,7 +44,7 @@ Mod Switch: R2'ye bir kez basarak gerçekleşir simülasyon ilk açıldığında
 ## rover_21_descriptions içindeki paketlerin çalıştırılması
 --------------------------------------------------------------------------------------------------------------------------
 
-D435'li simülasyonu çalıştırmak bu simülasyonun çalıştırılması için workspace' ayrı olarak realsense gazebo plugin'i eklenmeli [https://github.com/issaiass/realsense_gazebo_plugin.git](https://github.com/issaiass/realsense_gazebo_plugin.git) ve `catkin_make` yapıldıktan sonra `source devel/setup.bash` yapılmalı. sonra
+D435'li simülasyonun çalıştırılması için repo klonlandıktan sonra `catkin_make` yapılır sonra `source devel/setup.bash` yapılır.
 
 Sadece Gazebo için:
 
@@ -81,9 +79,9 @@ Hem Rviz Hem Gazebo için:
 çalıştırılmalıdır rviz konfigurasyonu kayıt işi d435 simülasyonu ile aynıdır.
 
 ----------------------------------------------------------------------------------------------------------------------------------------------
-Velodyne'lı paket içinse öncelikle şu repodan [https://bitbucket.org/DataspeedInc/velodyne_simulator.git](https://bitbucket.org/DataspeedInc/velodyne_simulator.git) **velodyne_gazebo_plugins** paketi src klasörüne indirilmeli. Ardından `catkin_make` yapılmalı sonrasında `source devel/setup.bash` yapıldıktan sonra.
+Velodyne'lı paket için repo klonlandıktan sonra `catkin_make` yapılmalı sonrasında `source devel/setup.bash` yapıldıktan sonra.
 
-Gazebo için:
+Sadece Gazebo için:
 
 `roslaunch rover_21_description_velodyne gazebo.launch`
 

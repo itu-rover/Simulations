@@ -1,3 +1,11 @@
 [submodule "blender_gazebo"]
 	path = blender_gazebo
 	url = https://github.com/Kokjix/blender_gazebo
+
+[submodule "realsense_gazebo_plugin"]
+	path = realsense_gazebo_plugin
+	url = https://github.com/issaiass/realsense_gazebo_plugin
+
+[submodule "interactive_marker_twist_server"]
+	path = interactive_marker_twist_server
+	url = https://github.com/ros-visualization/interactive_marker_twist_server
