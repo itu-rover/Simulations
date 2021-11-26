@@ -73,7 +73,7 @@ if __name__ == "__main__":
         else: # Base part
             twist = Twist() # contain twist for rover base
             rospy.Subscriber('/joy', Joy, joy_cb, twist)
-            vel_pub = rospy.Publisher("/cmd_vel", Twist, queue_size = 10)
+            vel_pub = rospy.Publisher('/cmd_vel', Twist, queue_size = 10)
             
             while not rospy.is_shutdown() and second_part:
                 vel_pub.publish(twist) # publish twist data
