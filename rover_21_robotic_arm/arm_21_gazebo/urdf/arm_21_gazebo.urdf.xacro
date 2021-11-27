@@ -10,7 +10,7 @@
 
 
   <joint name="dummy" type="fixed"> <!-- dummy joint it is fixed joint that means it is not moveable this was joint that connet arm to rovers base-->
-    <origin xyz="0.15 0 0.12" rpy="0 0 0"/>
+    <origin xyz="0.34 0 0.14" rpy="0 0 0"/>
     <parent link="base_link"/>
     <child link="alt_plaka"/>
   </joint>
