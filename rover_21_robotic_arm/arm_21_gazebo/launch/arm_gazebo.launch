@@ -33,7 +33,7 @@
     output="screen" /-->
 
     <!-- New panel-->
-<node args="-z 1.5 -x 2.0 -param panel_description -urdf -model panel_base" name="spawn_urdf" pkg="gazebo_ros" type="spawn_model"/> 
+<node args="-z 0.5 -x 2.0 -param panel_description -urdf -model panel_base" name="spawn_urdf" pkg="gazebo_ros" type="spawn_model"/> 
 
     <rosparam command="load" file="$(find rover_21_description)/config/control.yaml" /> <!-- load rover alt yurur control params-->
     

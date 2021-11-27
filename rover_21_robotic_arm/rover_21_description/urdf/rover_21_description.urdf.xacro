@@ -5,9 +5,8 @@
 <robot
   name="rover_21_description" xmlns:xacro="http://www.ros.org/wiki/xacro">
 
-  <!--xacro:include filename="$(find rover_21_description)/urdf/vlp16.urdf.xacro"/>
-  <xacro:property name="cameraSize" value="0.05"/>
-  <xacro:property name="cameraMass" value="0.1"/-->
+  <!-- <xacro:property name="cameraSize" value="0.05"/>
+  <xacro:property name="cameraMass" value="0.1"/> -->
 
   <link
     name="base_link">
@@ -348,7 +347,7 @@
     </plugin>
   </gazebo-->
 
-   <gazebo>
+   <!-- <gazebo>
     <plugin name="imu_controller" filename="libhector_gazebo_ros_imu.so">
       <updateRate>30.0</updateRate>
       <bodyName>base_link</bodyName>
@@ -375,7 +374,7 @@
       <referenceAltitude>0</referenceAltitude>
       <drift>0.0001 0.0001 0.0001</drift>
     </plugin>
-  </gazebo>
+  </gazebo> -->
 
   <!--gazebo reference="camera">
      <sensor type="camera" name="camera">
