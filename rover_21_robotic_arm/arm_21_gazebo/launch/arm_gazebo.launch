@@ -21,7 +21,7 @@
     name="spawn_model"
     pkg="gazebo_ros"
     type="spawn_model"
-    args="-z 1.8 -x -0.5 -urdf -param robot_description -model arm_21_gazebo"
+    args="-z 1.0 -x -0.5 -urdf -param robot_description -model arm_21_gazebo"
     output="screen" />
 
     <!-- Old panel if you want that old one uncomment this-->

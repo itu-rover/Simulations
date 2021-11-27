@@ -27,10 +27,10 @@
     <visual>
       <origin
         xyz="0 0 0"
-        rpy="0 0 0" />
+        rpy="0 0 -1.57" />
       <geometry>
         <mesh
-          filename="package://rover_21_description/meshes/base_link.STL" />
+          filename="package://rover_21_description/meshes/base_link_new.stl"  scale="0.1 0.1 0.1"/>
       </geometry>
       <material
         name="">
@@ -41,10 +41,10 @@
     <collision>
       <origin
         xyz="0 0 0"
-        rpy="0 0 0" />
+        rpy="0 0 -1.57" />
       <geometry>
         <mesh
-          filename="package://rover_21_description/meshes/base_link.STL" />
+          filename="package://rover_21_description/meshes/base_link_new.stl"  scale="0.1 0.1 0.1"/>
       </geometry>
     </collision>
   </link>
@@ -70,7 +70,7 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="package://rover_21_description/meshes/left_front_link.STL" />
+          filename="package://rover_21_description/meshes/left_front.stl"  scale="0.1 0.1 0.1"/>
       </geometry>
       <material
         name="">
@@ -84,7 +84,7 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="package://rover_21_description/meshes/left_front_link.STL" />
+          filename="package://rover_21_description/meshes/left_front.stl"  scale="0.1 0.1 0.1"/>
       </geometry>
     </collision>
   </link>
@@ -123,7 +123,7 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="package://rover_21_description/meshes/right_front_link.STL" />
+          filename="package://rover_21_description/meshes/right_front.stl"  scale="0.1 0.1 0.1"/>
       </geometry>
       <material
         name="">
@@ -137,7 +137,7 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="package://rover_21_description/meshes/right_front_link.STL" />
+          filename="package://rover_21_description/meshes/right_front.stl"  scale="0.1 0.1 0.1"/>
       </geometry>
     </collision>
   </link>
@@ -176,7 +176,7 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="package://rover_21_description/meshes/left_rear_link.STL" />
+          filename="package://rover_21_description/meshes/left_behind.stl"  scale="0.1 0.1 0.1"/>
       </geometry>
       <material
         name="">
@@ -190,7 +190,7 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="package://rover_21_description/meshes/left_rear_link.STL" />
+          filename="package://rover_21_description/meshes/left_behind.stl"  scale="0.1 0.1 0.1"/>
       </geometry>
     </collision>
   </link>
@@ -229,7 +229,7 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="package://rover_21_description/meshes/right_rear_link.STL" />
+          filename="package://rover_21_description/meshes/right_front.stl"  scale="0.1 0.1 0.1"/>
       </geometry>
       <material
         name="">
@@ -243,7 +243,7 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="package://rover_21_description/meshes/right_rear_link.STL" />
+          filename="package://rover_21_description/meshes/right_front.stl" scale="0.1 0.1 0.1"/>
       </geometry>
     </collision>
   </link>
