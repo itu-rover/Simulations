@@ -8,11 +8,16 @@ from definitions import *
 from geometry_msgs.msg import Twist
 from trajectory_msgs.msg import JointTrajectory, JointTrajectoryPoint
 import signal
+import pyfiglet
 
 """ Bu kod ileri kinamtik sürüş için yapılmıştır yani kolun eklemlerine ayrı ayrı joystick verileri basılmaktadır hiç bir ters kinematik kodu içermemektedir."""
 """Bu kod robot kolda değişen kontrolcüler için güncellenmiştir ve Jointtrajectory kullanmaktadır ayrıca signal handle ile güzelleşmiştir. En yakın zamanda C++'a geçilecektir."""
 
 if __name__ == "__main__":
+
+    banner = pyfiglet.figlet_format("ITU ROVER TELEOP")
+
+    print(banner)
 
     rospy.init_node('sim_control')
     arm_publisher = rospy.Publisher('/rover_arm_controller/command', JointTrajectory, queue_size=10) # Arm jointtrajectory publisher publish all joints at the same time
