@@ -10,7 +10,7 @@ from trajectory_msgs.msg import JointTrajectory, JointTrajectoryPoint
 import signal
 import pyfiglet
 
-""" Bu kod ileri kinamtik sürüş için yapılmıştır yani kolun eklemlerine ayrı ayrı joystick verileri basılmaktadır hiç bir ters kinematik kodu içermemektedir."""
+""" Bu kod ileri kinamatik sürüş için yapılmıştır yani kolun eklemlerine ayrı ayrı joystick verileri basılmaktadır hiç bir ters kinematik kodu içermemektedir."""
 """Bu kod robot kolda değişen kontrolcüler için güncellenmiştir ve Jointtrajectory kullanmaktadır ayrıca signal handle ile güzelleşmiştir. En yakın zamanda C++'a geçilecektir."""
 
 if __name__ == "__main__":
@@ -29,7 +29,7 @@ if __name__ == "__main__":
 
     signal.signal(signal.SIGINT, signal_handler) # Signal handler print massage when termination signal handled
     
-    rate = rospy.Rate(150) # rate value of 150 Hz
+    rate = rospy.Rate(70) # rate value of 150 Hz
     
     while not rospy.is_shutdown():
         if joy_msg.get_buttons(7) == 1 and not first_stage: # R2 tuşuna atanan mod değişim if bloğu

@@ -103,7 +103,7 @@ Hem Rviz Hem Gazebo için:
 -----------------------------------------------------------------------------------------------
 ## marsyard
 -----------------------------------------------------------------------------------------------
-Marsyard paketi için blender_gazebo adında bir paket lazımdır fakat bu başka bir repodan submodule olarak çekilmektedir o yüzden bu repo aşagodaki kod ile workspace'e clonelanmalı.
+Marsyard paketi için blender_gazebo adında bir paket lazımdır fakat bu başka bir repodan submodule olarak çekilmektedir o yüzden bu repo aşagıdaki kod ile workspace'e clonelanmalı.
 
 ```
 git clone --recurse-submodules https://github.com/itu-rover/Simulations.git

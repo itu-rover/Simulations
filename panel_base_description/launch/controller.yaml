@@ -5,15 +5,15 @@ panel_base_controller:
     publish_rate: 50
 
   # Position Controllers --------------------------------------
-  Rev38_position_controller:
+  Slider26_position_controller:
     type: effort_controllers/JointPositionController
-    joint: Rev38
+    joint: Slider26
     pid: {p: 100.0, i: 0.01, d: 10.0}
-  Slider39_position_controller:
+  Slider27_position_controller:
     type: effort_controllers/JointPositionController
-    joint: Slider39
+    joint: Slider27
     pid: {p: 100.0, i: 0.01, d: 10.0}
-  Slider40_position_controller:
+  Rev33_position_controller:
     type: effort_controllers/JointPositionController
-    joint: Slider40
+    joint: Rev33
     pid: {p: 100.0, i: 0.01, d: 10.0}
