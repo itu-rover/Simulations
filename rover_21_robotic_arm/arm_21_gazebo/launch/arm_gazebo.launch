@@ -3,12 +3,12 @@
         <arg name="robot_namespace" value="rover_21_description"/>
       </include>
 <!-- launch empty world -->
-<include file="$(find gazebo_ros)/launch/empty_world.launch">
+<!-- <include file="$(find gazebo_ros)/launch/empty_world.launch">
     <arg name="paused" value="true"/>
-</include> 
+</include>  -->
 
 <!-- launch custom world if you want custom world un comment that line-->
-<!-- <include file="$(find marsyard)/launch/marsyard.launch"/>   -->
+<include file="$(find marsyard)/launch/arm_world.launch"/>
 
 <!-- send urdf to the parameter server -->
 <param name="robot_description" command="xacro --inorder $(find arm_21_gazebo)/urdf/arm_21_gazebo.urdf.xacro"/>
