@@ -29,7 +29,7 @@ Simülasyonu çalıştırmak için öncellikle şu eklenili paketlere ihtiyacnı
 2. `sudo apt install ros-melodic-multimaster-launch`
 3. `sudo apt install ros-melodic-joy`
 
-bunlardan birinci paket realsense için ikinci ise alt yürürü joystik olmadan hareket ettirmek için gerekli. Bunlar yüklendikten sonra `catkin_make` yapılır daha sonra `source devel/setup.bash` yapılır.
+bunlardan birinci paket realsense için ikinci ise alt yürürü joystik olmadan hareket ettirmek için gerekli. Bunlar yüklendikten sonra `catkin build` yapılır daha sonra `source devel/setup.bash` yapılır.
 
 Gerekli Launch dosyaları:
 
@@ -51,7 +51,7 @@ Mod Switch: R2'ye bir kez basarak gerçekleşir simülasyon ilk açıldığında
 ## rover_21_descriptions içindeki paketlerin çalıştırılması
 --------------------------------------------------------------------------------------------------------------------------
 
-D435'li simülasyonun çalıştırılması için repo klonlandıktan sonra `catkin_make` yapılır sonra `source devel/setup.bash` yapılır.
+D435'li simülasyonun çalıştırılması için repo klonlandıktan sonra `catkin build` yapılır sonra `source devel/setup.bash` yapılır.
 
 Sadece Gazebo için:
 
@@ -86,7 +86,7 @@ Hem Rviz Hem Gazebo için:
 çalıştırılmalıdır rviz konfigurasyonu kayıt işi d435 simülasyonu ile aynıdır.
 
 ----------------------------------------------------------------------------------------------------------------------------------------------
-Velodyne'lı paket için repo klonlandıktan sonra `catkin_make` yapılmalı sonrasında `source devel/setup.bash` yapıldıktan sonra.
+Velodyne'lı paket için repo klonlandıktan sonra `catkin build` yapılmalı sonrasında `source devel/setup.bash` yapıldıktan sonra.
 
 Sadece Gazebo için:
 
@@ -114,3 +114,10 @@ NOT: bu paketin içindeki launch dosyaları simülasyon dosyaları tarafından o
 NOT 2: Eğer performans sıkıntı yaşarsanız haritalarda bana ulaşın.
 
 NOT 3: GIT LFS ile dae pushlayamama sorunu çözülmüştür.
+
+------------------------------------------------------------------------------------------
+## ArTagler
+------------------------------------------------------------------------------------------
+Alt Yürürlü haritalar için Artaglar eklenmiştir.
+
+TODO: Artag Konumları haritada biraz daha düzenlenecek ileriki commitlerde bu duruma bakılacak.
