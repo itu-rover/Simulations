@@ -2,7 +2,7 @@
   <arg default="true" name="use_sim_time" />
   <arg default="true" name="gui" />
   <arg default="false" name="headless" />
-  <arg default="$(find blender_gazebo)/worlds/actually_empty_world.world" name="world_name" />
+  <arg default="$(find blender_gazebo)/worlds/marsyard2021.world" name="world_name" />
 
   <include file="$(find gazebo_ros)/launch/empty_world.launch">
     <arg name="debug" value="0" />
