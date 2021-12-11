@@ -40,15 +40,15 @@ D435'li simülasyonun çalıştırılması için repo klonlandıktan sonra `catk
 
 Sadece Gazebo için:
 
-`roslaunch rover_21_description_d435 gazebo.launch`
+`roslaunch rover_22_description_d435 gazebo.launch`
 
 Sadece Rviz için:
 
-`roslaunch rover_21_description_d435 d435_rviz.launch`
+`roslaunch rover_22_description_d435 d435_rviz.launch`
 
 Hem Rviz Hem Gazebo için:
 
-`roslaunch rover_21_description_d435 rviz_and_gazebo.launch`
+`roslaunch rover_22_description_d435 rviz_and_gazebo.launch`
 
 çalıştırılmalıdır eğer Rviz configurasyonu değiştirlip kaydedilmek istenirse ilgili paketin içinde yer alan rviz klasörüne "urdf.rviz" adıyla rviz konfigürasyonu kaydedilebilir. 
 
@@ -58,15 +58,15 @@ ZED'li simulasyon için test edildiği kadarıyla herhangi ek paket kulmasına g
 
 Sadece Gazebo için:
 
-`roslaunch rover_21_description_zed gazebo.launch`
+`roslaunch rover_22_description_zed gazebo.launch`
 
 Sadece Rviz için:
 
-`roslaunch rover_21_description_zed zed_rviz.launch`
+`roslaunch rover_22_description_zed zed_rviz.launch`
 
 Hem Rviz Hem Gazebo için:
 
-`roslaunch rover_21_description_zed rviz_and_gazebo.launch`
+`roslaunch rover_22_description_zed rviz_and_gazebo.launch`
 
 çalıştırılmalıdır rviz konfigurasyonu kayıt işi d435 simülasyonu ile aynıdır.
 
