@@ -1,0 +1,29 @@
+<launch>
+  <param command="$(find xacro)/xacro $(find rover_22_description_velodyne)/urdf/rover_22.xacro" name="robot_description" />
+  <node args="-y 0.5 -z 1.5 -Y -1.57 -param robot_description -urdf -model rover_22" name="spawn_urdf" pkg="gazebo_ros" type="spawn_model" />
+  <include file="$(find gazebo_ros)/launch/empty_world.launch">
+    <arg name="paused" value="true" />
+    <arg name="use_sim_time" value="true" />
+    <arg name="gui" value="true" />
+    <arg name="headless" value="false" />
+    <arg name="debug" value="false" />
+  </include>
+  <node name="tf_footprint_base" pkg="tf" type="static_transform_publisher" args="0 0 0 0 0 0 base_link base_footprint 40" />
+  <rosparam command="load" file="$(find rover_22_description_velodyne)/config/control.yaml" />
+
+
+  <node name="fake_joint_calibration" pkg="rostopic" type="rostopic" args="pub /calibrated std_msgs/Bool true" />
+  <!-- Autonomous Steering Controller if you want autonomous just uncomment this line below-->
+  <!-- <node name="controller_spawner" pkg="controller_manager" type="spawner" output="screen" args="rover_joint_publisher rover_steering_controller rover_wheel_leftfront rover_wheel_rightfront rover_wheel_leftrear rover_wheel_rightrear" /> -->
+
+  <!-- Teleoperation Steering Controller if you want teleoperation just uncomment this line below-->
+  <node name="controller_spawner" pkg="controller_manager" type="spawner" output="screen" args="rover_joint_publisher four_wheel_steering_controller" />
+  <node name="robot_state_publisher" pkg="robot_state_publisher" type="robot_state_publisher" />
+  <node pkg="interactive_marker_twist_server" type="marker_server" name="twist_marker_server" output="screen" />
+  
+  <node pkg="twist_mux" type="twist_mux" name="twist_mux">
+    <rosparam command="load" file="$(find rover_22_description_velodyne)/config/twist_mux.yaml" />
+    <remap from="cmd_vel_out" to="/four_wheel_steering_controller/cmd_vel" />
+  </node>
+
+</launch>
