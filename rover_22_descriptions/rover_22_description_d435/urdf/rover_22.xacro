@@ -1,0 +1,326 @@
+<?xml version="1.0"?>
+<robot name="rover_22" xmlns:xacro="http://www.ros.org/wiki/xacro">
+
+  <xacro:include filename="$(find rover_22_description_d435)/urdf/materials.xacro" />
+  <xacro:include filename="$(find rover_22_description_d435)/urdf/rover_22.trans" />
+  <xacro:include filename="$(find rover_22_description_d435)/urdf/rover_22.gazebo" />
+  <link name="base_link">
+    <inertial>
+      <origin rpy="0 0 0" xyz="0.3900216643223882 -0.05651805156877747 -0.032478855168978776" />
+      <mass value="9.132305216420624" />
+      <inertia ixx="0.669816" ixy="1.6e-05" ixz="8e-06" iyy="1.077053" iyz="-0.006568" izz="1.72329" />
+    </inertial>
+    <visual>
+      <origin rpy="0 0 0" xyz="0 0 0" />
+      <geometry>
+        <mesh filename="package://rover_22_description_d435/meshes/base_link.stl" scale="0.001 0.001 0.001" />
+      </geometry>
+      <material name="silver" />
+    </visual>
+    <collision>
+      <origin rpy="0 0 0" xyz="0 0 0" />
+      <geometry>
+        <mesh filename="package://rover_22_description_d435/meshes/base_link.stl" scale="0.001 0.001 0.001" />
+      </geometry>
+    </collision>
+  </link>
+
+  <link name="steering_leftfront_link_1">
+    <inertial>
+      <origin rpy="0 0 0" xyz="0.05462767340500796 -4.160167264566361e-07 -0.11312448251790846" />
+      <mass value="1.4162605923803364" />
+      <inertia ixx="0.006106" ixy="-0.0" ixz="-0.000193" iyy="0.007213" iyz="-0.0" izz="0.002603" />
+    </inertial>
+    <visual>
+      <origin rpy="0 0 0" xyz="0.071 -0.460515 0.071298" />
+      <geometry>
+        <mesh filename="package://rover_22_description_d435/meshes/steering_leftfront_link_1.stl" scale="0.001 0.001 0.001" />
+      </geometry>
+      <material name="silver" />
+    </visual>
+    <collision>
+      <origin rpy="0 0 0" xyz="0.071 -0.460515 0.071298" />
+      <geometry>
+        <mesh filename="package://rover_22_description_d435/meshes/steering_leftfront_link_1.stl" scale="0.001 0.001 0.001" />
+      </geometry>
+    </collision>
+  </link>
+
+  <link name="steering_leftrear_link_1">
+    <inertial>
+      <origin rpy="0 0 0" xyz="0.05462767340500775 4.160167182964969e-07 -0.11312448251790536" />
+      <mass value="1.4162605923803364" />
+      <inertia ixx="0.006106" ixy="-0.0" ixz="-0.000193" iyy="0.007213" iyz="-0.0" izz="0.002603" />
+    </inertial>
+    <visual>
+      <origin rpy="0 0 0" xyz="0.071 0.460515 0.071298" />
+      <geometry>
+        <mesh filename="package://rover_22_description_d435/meshes/steering_leftrear_link_1.stl" scale="0.001 0.001 0.001" />
+      </geometry>
+      <material name="silver" />
+    </visual>
+    <collision>
+      <origin rpy="0 0 0" xyz="0.071 0.460515 0.071298" />
+      <geometry>
+        <mesh filename="package://rover_22_description_d435/meshes/steering_leftrear_link_1.stl" scale="0.001 0.001 0.001" />
+      </geometry>
+    </collision>
+  </link>
+
+  <link name="steering_rightrear_link_1">
+    <inertial>
+      <origin rpy="0 0 0" xyz="-0.054627673405008514 4.160167272893034e-07 -0.11312448251790566" />
+      <mass value="1.4162605923803364" />
+      <inertia ixx="0.006106" ixy="-0.0" ixz="0.000193" iyy="0.007213" iyz="0.0" izz="0.002603" />
+    </inertial>
+    <visual>
+      <origin rpy="0 0 0" xyz="-0.851 0.460515 0.071298" />
+      <geometry>
+        <mesh filename="package://rover_22_description_d435/meshes/steering_rightrear_link_1.stl" scale="0.001 0.001 0.001" />
+      </geometry>
+      <material name="silver" />
+    </visual>
+    <collision>
+      <origin rpy="0 0 0" xyz="-0.851 0.460515 0.071298" />
+      <geometry>
+        <mesh filename="package://rover_22_description_d435/meshes/steering_rightrear_link_1.stl" scale="0.001 0.001 0.001" />
+      </geometry>
+    </collision>
+  </link>
+
+  <link name="steering_rightfront_link_1">
+    <inertial>
+      <origin rpy="0 0 0" xyz="-0.054627673405008514 -4.1601671740831847e-07 -0.1131244825179086" />
+      <mass value="1.4162605923803364" />
+      <inertia ixx="0.006106" ixy="-0.0" ixz="0.000193" iyy="0.007213" iyz="0.0" izz="0.002603" />
+    </inertial>
+    <visual>
+      <origin rpy="0 0 0" xyz="-0.851 -0.460515 0.071298" />
+      <geometry>
+        <mesh filename="package://rover_22_description_d435/meshes/steering_rightfront_link_1.stl" scale="0.001 0.001 0.001" />
+      </geometry>
+      <material name="silver" />
+    </visual>
+    <collision>
+      <origin rpy="0 0 0" xyz="-0.851 -0.460515 0.071298" />
+      <geometry>
+        <mesh filename="package://rover_22_description_d435/meshes/steering_rightfront_link_1.stl" scale="0.001 0.001 0.001" />
+      </geometry>
+    </collision>
+  </link>
+
+  <link name="wheel_leftfront_link_1">
+    <inertial>
+      <origin rpy="0 0 0" xyz="0.012081210278825166 -7.964965005857749e-05 -7.809793840796164e-07" />
+      <mass value="15.748238406301127" />
+      <inertia ixx="0.202408" ixy="-1e-05" ixz="0.0" iyy="0.110179" iyz="-1e-06" izz="0.110074" />
+    </inertial>
+    <visual>
+      <origin rpy="0 0 0" xyz="0.086 -0.460515 0.223298" />
+      <geometry>
+        <mesh filename="package://rover_22_description_d435/meshes/wheel_leftfront_link_1.stl" scale="0.001 0.001 0.001" />
+      </geometry>
+      <material name="silver" />
+    </visual>
+    <collision>
+      <origin rpy="0 0 0" xyz="0.086 -0.460515 0.223298" />
+      <geometry>
+        <mesh filename="package://rover_22_description_d435/meshes/wheel_leftfront_link_1.stl" scale="0.001 0.001 0.001" />
+      </geometry>
+    </collision>
+  </link>
+
+  <link name="wheel_leftrear_link_1">
+    <inertial>
+      <origin rpy="0 0 0" xyz="0.012081210278825125 -7.881761661360231e-05 -7.809793807211918e-07" />
+      <mass value="15.748238406301127" />
+      <inertia ixx="0.202408" ixy="-1e-05" ixz="0.0" iyy="0.110179" iyz="-1e-06" izz="0.110074" />
+    </inertial>
+    <visual>
+      <origin rpy="0 0 0" xyz="0.086 0.460515 0.223298" />
+      <geometry>
+        <mesh filename="package://rover_22_description_d435/meshes/wheel_leftrear_link_1.stl" scale="0.001 0.001 0.001" />
+      </geometry>
+      <material name="silver" />
+    </visual>
+    <collision>
+      <origin rpy="0 0 0" xyz="0.086 0.460515 0.223298" />
+      <geometry>
+        <mesh filename="package://rover_22_description_d435/meshes/wheel_leftrear_link_1.stl" scale="0.001 0.001 0.001" />
+      </geometry>
+    </collision>
+  </link>
+
+  <link name="wheel_rightrear_link_1">
+    <inertial>
+      <origin rpy="0 0 0" xyz="-0.01208121027882636 -7.88176166130472e-05 1.5670461361305676e-06" />
+      <mass value="15.748238406301127" />
+      <inertia ixx="0.202408" ixy="1e-05" ixz="0.0" iyy="0.110179" iyz="1e-06" izz="0.110074" />
+    </inertial>
+    <visual>
+      <origin rpy="0 0 0" xyz="-0.866 0.460515 0.223298" />
+      <geometry>
+        <mesh filename="package://rover_22_description_d435/meshes/wheel_rightrear_link_1.stl" scale="0.001 0.001 0.001" />
+      </geometry>
+      <material name="silver" />
+    </visual>
+    <collision>
+      <origin rpy="0 0 0" xyz="-0.866 0.460515 0.223298" />
+      <geometry>
+        <mesh filename="package://rover_22_description_d435/meshes/wheel_rightrear_link_1.stl" scale="0.001 0.001 0.001" />
+      </geometry>
+    </collision>
+  </link>
+
+  <link name="wheel_rightfront_link_1">
+    <inertial>
+      <origin rpy="0 0 0" xyz="-0.012081210278826138 -7.964965005852198e-05 1.5670461332162322e-06" />
+      <mass value="15.748238406301127" />
+      <inertia ixx="0.202408" ixy="1e-05" ixz="0.0" iyy="0.110179" iyz="1e-06" izz="0.110074" />
+    </inertial>
+    <visual>
+      <origin rpy="0 0 0" xyz="-0.866 -0.460515 0.223298" />
+      <geometry>
+        <mesh filename="package://rover_22_description_d435/meshes/wheel_rightfront_link_1.stl" scale="0.001 0.001 0.001" />
+      </geometry>
+      <material name="silver" />
+    </visual>
+    <collision>
+      <origin rpy="0 0 0" xyz="-0.866 -0.460515 0.223298" />
+      <geometry>
+        <mesh filename="package://rover_22_description_d435/meshes/wheel_rightfront_link_1.stl" scale="0.001 0.001 0.001" />
+      </geometry>
+    </collision>
+  </link>
+
+  <joint name="steering_leftfront_joint" type="continuous">
+    <origin rpy="0 0 0" xyz="-0.071 0.460515 -0.071298" />
+    <parent link="base_link" />
+    <child link="steering_leftfront_link_1" />
+    <axis xyz="-0.0 -0.0 1.0" />
+  </joint>
+
+  <joint name="steering_leftrear_joint" type="continuous">
+    <origin rpy="0 0 0" xyz="-0.071 -0.460515 -0.071298" />
+    <parent link="base_link" />
+    <child link="steering_leftrear_link_1" />
+    <axis xyz="0.0 0.0 1.0" />
+  </joint>
+
+  <joint name="steering_rightrear_joint" type="continuous">
+    <origin rpy="0 0 0" xyz="0.851 -0.460515 -0.071298" />
+    <parent link="base_link" />
+    <child link="steering_rightrear_link_1" />
+    <axis xyz="0.0 0.0 1.0" />
+  </joint>
+
+  <joint name="steering_rightfront_joint" type="continuous">
+    <origin rpy="0 0 0" xyz="0.851 0.460515 -0.071298" />
+    <parent link="base_link" />
+    <child link="steering_rightfront_link_1" />
+    <axis xyz="-0.0 -0.0 1.0" />
+  </joint>
+
+  <joint name="wheel_leftfront_joint" type="continuous">
+    <origin rpy="0 0 0" xyz="-0.015 0.0 -0.152" />
+    <parent link="steering_leftfront_link_1" />
+    <child link="wheel_leftfront_link_1" />
+    <axis xyz="-1.0 -0.0 -0.0" />
+  </joint>
+
+  <joint name="wheel_leftrear_joint" type="continuous">
+    <origin rpy="0 0 0" xyz="-0.015 0.0 -0.152" />
+    <parent link="steering_leftrear_link_1" />
+    <child link="wheel_leftrear_link_1" />
+    <axis xyz="-1.0 -0.0 -0.0" />
+  </joint>
+
+  <joint name="wheel_rightrear_joint" type="continuous">
+    <origin rpy="0 0 3.14" xyz="0.015 0.0 -0.152" />
+    <parent link="steering_rightrear_link_1" />
+    <child link="wheel_rightrear_link_1" />
+    <axis xyz="1.0 0.0 -0.0" />
+  </joint>
+
+  <joint name="wheel_rightfront_joint" type="continuous">
+    <origin rpy="0 0 3.14" xyz="0.015 0.0 -0.152" />
+    <parent link="steering_rightfront_link_1" />
+    <child link="wheel_rightfront_link_1" />
+    <axis xyz="1.0 0.0 -0.0" />
+  </joint>
+
+  <xacro:include filename="$(find rover_22_description_d435)/urdf/_d435.urdf.xacro"/>
+  <xacro:arg name="use_nominal_extrinsics" default="True" />
+
+  <sensor_d435 parent="base_link">
+    <origin xyz="0.45 0.30 0.12" rpy="0 0 1.57"/>
+  </sensor_d435>
+
+  <gazebo>
+    <plugin name="imu_controller" filename="libhector_gazebo_ros_imu.so">
+      <updateRate>30.0</updateRate>
+      <bodyName>base_link</bodyName>
+      <topicName>/imu/data</topicName>
+      <accelDrift>0.005 0.005 0.005</accelDrift>
+      <accelGaussianNoise>0.005 0.005 0.005</accelGaussianNoise>
+      <rateDrift>0.005 0.005 0.005 </rateDrift>
+      <rateGaussianNoise>0.005 0.005 0.005 </rateGaussianNoise>
+      <headingDrift>0.005</headingDrift>
+      [ERROR] [1555346159.311804930, 0.098000000]:
+      <headingGaussianNoise>0.005</headingGaussianNoise>
+    </plugin>
+  </gazebo>
+
+  <gazebo>
+    <plugin name="gps_controller" filename="libhector_gazebo_ros_gps.so">
+      <updateRate>30</updateRate>
+      <bodyName>base_link</bodyName>
+      <frameId>base_link</frameId>
+      <topicName>gps/fix</topicName>
+      <velocityTopicName>navsat/vel</velocityTopicName>
+      <referenceLatitude>41.1052670854</referenceLatitude>
+      <referenceLongitude>29.023378124</referenceLongitude>
+      <referenceHeading>0</referenceHeading>
+      <referenceAltitude>0</referenceAltitude>
+      <drift>0.0001 0.0001 0.0001</drift>
+    </plugin>
+  </gazebo>
+
+  <gazebo reference="camera">
+    <sensor type="camera" name="camera">
+      <update_rate>30.0</update_rate>
+      <camera name="camera">
+        <horizontal_fov>1.3962634</horizontal_fov>
+        <image>
+          <width>800</width>
+          <height>800</height>
+          <format>R8G8B8</format>
+        </image>
+        <clip>
+          <near>0.02</near>
+          <far>300</far>
+        </clip>
+        <noise>
+          <type>gaussian</type>
+          <mean>0.0</mean>
+          <stddev>0.007</stddev>
+        </noise>
+      </camera>
+      <plugin name="camera_controller" filename="libgazebo_ros_camera.so">
+        <alwaysOn>true</alwaysOn>
+        <updateRate>0.0</updateRate>
+        <cameraName>/rover_20/camera</cameraName>
+        <imageTopicName>camera_view</imageTopicName>
+        <cameraInfoTopicName>camera_info</cameraInfoTopicName>
+        <frameName>camera</frameName>
+        <hackBaseline>0.07</hackBaseline>
+        <distortionK1>0.0</distortionK1>
+        <distortionK2>0.0</distortionK2>
+        <distortionK3>0.0</distortionK3>
+        <distortionT1>0.0</distortionT1>
+        <distortionT2>0.0</distortionT2>
+      </plugin>
+    </sensor>
+  </gazebo>
+
+</robot>
