@@ -27,13 +27,50 @@ Ardından şu komut çalıştırılıp lokalizasyon sağlanır
 roslaunch rover_21_localization localization.launch
 ```
 ---------------------------------------------------------------------------------
-## rover_22_descriptions paketi
+## rover_22_descriptions içindeki paketlerin çalıştırılması
 ---------------------------------------------
-Bu pakette 3 tip alt yürür bulunacaktır şuanlık sadece velodynelı bulunmaktadır.
+
 Gerekli paketler 21 sistemleri ile aynı olmakla birlikte ek olarak şu komutla indirilir paketler 
 ```
 sudo apt install ros-melodic-four-wheel-steering-controller && sudo apt install ros-melodic-four-wheel-steering-msgs && sudo apt install ros-melodic-joint-trajectory-controller && sudo apt install ros-melodic-velocity-controllers
 ```
+--------------------------------------------------------------------------------------------------------------------------
+
+D435'li simülasyonun çalıştırılması için repo klonlandıktan sonra `catkin build` yapılır sonra `source devel/setup.bash` yapılır.
+
+Sadece Gazebo için:
+
+`roslaunch rover_21_description_d435 gazebo.launch`
+
+Sadece Rviz için:
+
+`roslaunch rover_21_description_d435 d435_rviz.launch`
+
+Hem Rviz Hem Gazebo için:
+
+`roslaunch rover_21_description_d435 rviz_and_gazebo.launch`
+
+çalıştırılmalıdır eğer Rviz configurasyonu değiştirlip kaydedilmek istenirse ilgili paketin içinde yer alan rviz klasörüne "urdf.rviz" adıyla rviz konfigürasyonu kaydedilebilir. 
+
+------------------------------------------------------------------------------------------------------------------------------------------
+
+ZED'li simulasyon için test edildiği kadarıyla herhangi ek paket kulmasına gerek yoktur ancak ZED kamera ile test yapılacaksa şu linkten ZED'in ros wraper'nın kurulması önerilir. [https://github.com/stereolabs/zed-ros-wrapper.git](https://github.com/stereolabs/zed-ros-wrapper.git)
+
+Sadece Gazebo için:
+
+`roslaunch rover_21_description_zed gazebo.launch`
+
+Sadece Rviz için:
+
+`roslaunch rover_21_description_zed zed_rviz.launch`
+
+Hem Rviz Hem Gazebo için:
+
+`roslaunch rover_21_description_zed rviz_and_gazebo.launch`
+
+çalıştırılmalıdır rviz konfigurasyonu kayıt işi d435 simülasyonu ile aynıdır.
+
+----------------------------------------------------------------------------------------------------
 Velodyne'lı paket için repo klonlandıktan sonra `catkin build` yapılmalı sonrasında `source devel/setup.bash` yapıldıktan sonra.
 
 Sadece Gazebo için:
