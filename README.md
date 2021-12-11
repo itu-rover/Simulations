@@ -1,4 +1,6 @@
 # Simulations
+## ÖNEMLİ!!!
+Marsyard paketini çalıştırmak için GIT Large File Storage indirin kurlumu burada [https://drive.google.com/file/d/1v8TXeXEdQh3YSndxKcN7ITRKnqt_aL_D/view?usp=sharing](https://drive.google.com/file/d/1v8TXeXEdQh3YSndxKcN7ITRKnqt_aL_D/view?usp=sharing)
 ## Giriş
 
 Marsyard paketi için blender_gazebo adında bir paket lazımdır fakat bu başka bir repodan submodule olarak çekilmektedir o yüzden bu repo aşagodaki kod ile workspace'e clonelanmalı.
@@ -11,7 +13,7 @@ Bu repo temelde 2 tür simülasyon barındırmaktadır rover_21_descriptions sad
 - ZED'li alt yürür
 - D435'lü yürür
 - Velodyne Lidarlı yürür
-
+rover_21_robotic_arm ise alt yürürle beraber robot kol içermektedir. burada kol üstünde 2 fpv kamera bir tane d435 bulunmaktadır.
 --------------------------------------------------------------------------------------------------------------------------
 ## IMU ve GPS gibi verilerin alınması
 Bu verilerin alınması için kurulması gerek paketler aşağıda komut konsola girildiği zaman kurulacaktır.
@@ -19,9 +21,53 @@ Bu verilerin alınması için kurulması gerek paketler aşağıda komut konsola
 ```
 sudo apt install ros-melodic-hector-gazebo-*
 ```
+Ardından şu komut çalıştırılıp lokalizasyon sağlanır
+
+```
+roslaunch rover_21_localization localization.launch
+```
+---------------------------------------------------------------------------------
+## rover_22_descriptions paketi
+---------------------------------------------
+Bu pakette 3 tip alt yürür bulunacaktır şuanlık sadece velodynelı bulunmaktadır.
+Gerekli paketler 21 sistemleri ile aynı olmakla birlikte ek olarak şu komutla indirilir paketler 
+```
+sudo apt install ros-melodic-four-wheel-steering-controller && sudo apt install ros-melodic-four-wheel-steering-msgs && sudo apt install ros-melodic-joint-trajectory-controller && sudo apt install ros-melodic-velocity-controllers
+```
+Velodyne'lı paket için repo klonlandıktan sonra `catkin build` yapılmalı sonrasında `source devel/setup.bash` yapıldıktan sonra.
+
+Sadece Gazebo için:
+
+`roslaunch rover_22_description_velodyne gazebo.launch`
+
+Sadece Rviz için:
+
+`roslaunch rover_22_description_velodyne velodyne_rviz.launch`
+
+Hem Rviz Hem Gazebo için:
+
+`roslaunch rover_22_description_velodyne rviz_and_gazebo.launch`
+
+-----------------------------------------------------------------------
+## Araçların Joystick ile Kontrolü
+-------------------------------------------
+Araçları Joystick ile kontrol etmek isterseniz `robot_drive` adında bir paket bulunmakta 21 paketleri için
+
+```
+roslaunch robot_drive kinematic.launch
+```
+Robot Kol sürüş: Sağ, Sol analog ve ok tuşları
+Alt Yürür Sürüş: R1 basılı tutarak Turbo mod L1 basılı tutarak normal mod sürüşün kontrolü ise sol analog
+Mod Switch: R2'ye bir kez basarak gerçekleşir simülasyon ilk açıldığında Robot kol sürüşü açıktır R2'ye basıldığında alt yürüre geçer. Dilerseniz R2 ye basarak tekrar robot kola geçebilirsiniz.
+
+22 Sistemleri için 
+
+```
+roslaunch robot_drive steering.launch
+```
+Alt Yürür: L1 basılı tutarak Sol analao ileri geri X ekseni hareketi Sol sağ sol y ekseni hareketi Sağ analog sağ sol ise angular z hareketini sağlar.
 
 -----------------------------------------------------------------------------------------------------------------
-rover_21_robotic_arm ise alt yürürle beraber robot kol içermektedir. burada kol üstünde 2 fpv kamera bir tane d435 bulunmaktadır.
 
 ## rover_21_robotic_arm'ın çalıştırılması
 Simülasyonu çalıştırmak için öncellikle şu eklenili paketlere ihtiyacnız var 
