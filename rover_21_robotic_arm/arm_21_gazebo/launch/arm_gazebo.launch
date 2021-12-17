@@ -12,7 +12,9 @@
 
 <!-- send urdf to the parameter server -->
 <param name="robot_description" command="xacro --inorder $(find arm_21_gazebo)/urdf/arm_21_gazebo.urdf.xacro"/>
-<rosparam file="$(find arm_21_gazebo)/config/ros_control_params.yaml" command="load"/> <!-- load arm pid gains-->
+
+<!-- load arm pid gains-->
+<rosparam file="$(find arm_21_gazebo)/config/ros_control_params.yaml" command="load"/> 
 
 <param command="$(find xacro)/xacro $(find panel_base_description)/urdf/panel_base.xacro" name="panel_description"/>  
 
