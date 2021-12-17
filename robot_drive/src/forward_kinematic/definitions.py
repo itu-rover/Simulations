@@ -7,6 +7,7 @@ class ARM(object):
     def __init__(self):
         self.joint_angles = [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0]
         self.delta_thetas = [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0]
+        self.velocity = [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0]
         self.gripper_angles = [0.0, 0.0]
         self.gripper_delta_thetas = [0.0, 0.0, 0.0, 0.0]
 
@@ -55,6 +56,12 @@ def joy_callback(data):
     arm.delta_thetas[3] = -data.axes[3] * 0.003
     arm.delta_thetas[4] = -data.axes[7] * 0.003
     arm.delta_thetas[5] = data.axes[6] * 0.06
+    arm.velocity[0] = data.axes[0] * 1.5
+    arm.velocity[1] = data.axes[1] * 1.5
+    arm.velocity[2] = data.axes[2] * 1.5
+    arm.velocity[3] = data.axes[3] * 1.5
+    arm.velocity[4] = data.axes[4] * 1.5
+    arm.velocity[5] = data.axes[5] * 1.5
     joy_msg.buttons[7] = data.buttons[7]
 
     # Kare parmakları kapamak Daire parmakları açmak

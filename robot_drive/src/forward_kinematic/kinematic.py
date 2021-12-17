@@ -65,6 +65,7 @@ if __name__ == "__main__":
             
             arm_points = JointTrajectoryPoint() # contain joint positions
             arm_points.positions = arm.joint_angles
+            arm_points.velocities = arm.velocity
             arm_points.time_from_start = rospy.Duration.from_sec(0.005)
 
             arm_msg.points.append(arm_points)
