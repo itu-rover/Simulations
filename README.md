@@ -201,6 +201,6 @@ NOT 3: GIT LFS ile dae pushlayamama sorunu çözülmüştür.
 ------------------------------------------------------------------------------------------
 ## ArTagler
 ------------------------------------------------------------------------------------------
-Alt Yürürlü haritalar için Artaglar eklenmiştir.
+Alt Yürürlü haritalar için Artaglar eklenmiştir. Artaglar kare prizma değil üçgen prizma olmuştur bunu kullanabilmek için bir .stl dosyası vardır ancak bunun için `blender_gazebo/sdf/landmark.sdf.xacro` dizininden `landmark.sdf.xacro` dosyasındaki 46. ve 60. satrılar kendi dizininize göre değiştirilmeli onun için `blender_gazebo/sdf/meshes` dizinine gidip konsoldan `pwd` komutunu kullanıp öğrenebilsiniz.
 
 TODO: Artag Konumları haritada biraz daha düzenlenecek ileriki commitlerde bu duruma bakılacak.
