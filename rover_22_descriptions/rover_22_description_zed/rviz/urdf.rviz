@@ -11,6 +11,7 @@ Panels:
         - /TF1/Frames1
         - /TF1/Tree1
         - /PointCloud21
+        - /Camera1
       Splitter Ratio: 0.6360294222831726
     Tree Height: 436
   - Class: rviz/Selection
@@ -72,47 +73,6 @@ Visualization Manager:
           Show Axes: false
           Show Trail: false
           Value: true
-        camera_bottom_screw_frame:
-          Alpha: 1
-          Show Axes: false
-          Show Trail: false
-        camera_color_frame:
-          Alpha: 1
-          Show Axes: false
-          Show Trail: false
-        camera_color_optical_frame:
-          Alpha: 1
-          Show Axes: false
-          Show Trail: false
-        camera_depth_frame:
-          Alpha: 1
-          Show Axes: false
-          Show Trail: false
-        camera_depth_optical_frame:
-          Alpha: 1
-          Show Axes: false
-          Show Trail: false
-        camera_left_ir_frame:
-          Alpha: 1
-          Show Axes: false
-          Show Trail: false
-        camera_left_ir_optical_frame:
-          Alpha: 1
-          Show Axes: false
-          Show Trail: false
-        camera_link:
-          Alpha: 1
-          Show Axes: false
-          Show Trail: false
-          Value: true
-        camera_right_ir_frame:
-          Alpha: 1
-          Show Axes: false
-          Show Trail: false
-        camera_right_ir_optical_frame:
-          Alpha: 1
-          Show Axes: false
-          Show Trail: false
         steering_leftfront_link_1:
           Alpha: 1
           Show Axes: false
@@ -149,6 +109,48 @@ Visualization Manager:
           Show Trail: false
           Value: true
         wheel_rightrear_link_1:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        zed2_baro_link:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+        zed2_camera_center:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        zed2_left_camera_frame:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+        zed2_left_camera_optical_frame:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+        zed2_mag_link:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+        zed2_right_camera_frame:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+        zed2_right_camera_optical_frame:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+        zed2_temp_left_link:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+        zed2_temp_right_link:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+        zed2_tilt_head_link:
           Alpha: 1
           Show Axes: false
           Show Trail: false
@@ -168,26 +170,6 @@ Visualization Manager:
           Value: true
         base_link:
           Value: true
-        camera_bottom_screw_frame:
-          Value: true
-        camera_color_frame:
-          Value: true
-        camera_color_optical_frame:
-          Value: true
-        camera_depth_frame:
-          Value: true
-        camera_depth_optical_frame:
-          Value: true
-        camera_left_ir_frame:
-          Value: true
-        camera_left_ir_optical_frame:
-          Value: true
-        camera_link:
-          Value: true
-        camera_right_ir_frame:
-          Value: true
-        camera_right_ir_optical_frame:
-          Value: true
         odom:
           Value: true
         steering_leftfront_link_1:
@@ -206,6 +188,26 @@ Visualization Manager:
           Value: true
         wheel_rightrear_link_1:
           Value: true
+        zed2_baro_link:
+          Value: true
+        zed2_camera_center:
+          Value: true
+        zed2_left_camera_frame:
+          Value: true
+        zed2_left_camera_optical_frame:
+          Value: true
+        zed2_mag_link:
+          Value: true
+        zed2_right_camera_frame:
+          Value: true
+        zed2_right_camera_optical_frame:
+          Value: true
+        zed2_temp_left_link:
+          Value: true
+        zed2_temp_right_link:
+          Value: true
+        zed2_tilt_head_link:
+          Value: true
       Marker Scale: 0.10000000149011612
       Name: TF
       Show Arrows: true
@@ -216,20 +218,6 @@ Visualization Manager:
           base_link:
             base_footprint:
               {}
-            camera_bottom_screw_frame:
-              camera_link:
-                camera_depth_frame:
-                  camera_color_frame:
-                    camera_color_optical_frame:
-                      {}
-                  camera_depth_optical_frame:
-                    {}
-                  camera_left_ir_frame:
-                    camera_left_ir_optical_frame:
-                      {}
-                  camera_right_ir_frame:
-                    camera_right_ir_optical_frame:
-                      {}
             steering_leftfront_link_1:
               wheel_leftfront_link_1:
                 {}
@@ -242,13 +230,29 @@ Visualization Manager:
             steering_rightrear_link_1:
               wheel_rightrear_link_1:
                 {}
+            zed2_tilt_head_link:
+              zed2_camera_center:
+                zed2_baro_link:
+                  {}
+                zed2_left_camera_frame:
+                  zed2_left_camera_optical_frame:
+                    {}
+                  zed2_temp_left_link:
+                    {}
+                zed2_mag_link:
+                  {}
+                zed2_right_camera_frame:
+                  zed2_right_camera_optical_frame:
+                    {}
+                  zed2_temp_right_link:
+                    {}
       Update Interval: 0
       Value: true
     - Alpha: 0.5
       Autocompute Intensity Bounds: true
       Autocompute Value Bounds:
-        Max Value: 0.078017458319664
-        Min Value: -0.36904191970825195
+        Max Value: -0.3690335750579834
+        Min Value: -0.36927884817123413
         Value: true
       Axis: Z
       Channel Name: intensity
@@ -267,7 +271,7 @@ Visualization Manager:
       Size (Pixels): 3
       Size (m): 0.009999999776482582
       Style: Points
-      Topic: /camera/depth/color/points
+      Topic: /zed2/point_cloud/cloud_registered
       Unreliable: false
       Use Fixed Frame: true
       Use rainbow: true
@@ -275,7 +279,7 @@ Visualization Manager:
     - Class: rviz/Camera
       Enabled: true
       Image Rendering: overlay
-      Image Topic: /camera/color/image_raw
+      Image Topic: /zed2/left_raw/image_raw_color
       Name: Camera
       Overlay Alpha: 1
       Queue Size: 2
@@ -324,9 +328,9 @@ Visualization Manager:
         Swap Stereo Eyes: false
         Value: false
       Focal Point:
-        X: 1.028995394706726
-        Y: 0.16493135690689087
-        Z: -0.3284110128879547
+        X: 0.27009356021881104
+        Y: 2.423051595687866
+        Z: -0.0849638357758522
       Focal Shape Fixed Size: false
       Focal Shape Size: 0.05000000074505806
       Invert Z Axis: false
