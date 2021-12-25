@@ -1,13 +1,18 @@
 <launch>
+  <include file="$(find multimaster_launch)/launch/multimaster_gazebo_robot.launch">
+    <arg name="robot_namespace" value="rover_21_description_d435"/>
+  </include>
   <param command="$(find xacro)/xacro $(find rover_22_description_velodyne)/urdf/rover_22.xacro" name="robot_description" />
   <node args="-y 0.5 -z 1.5 -Y -1.57 -param robot_description -urdf -model rover_22" name="spawn_urdf" pkg="gazebo_ros" type="spawn_model" />
-  <include file="$(find gazebo_ros)/launch/empty_world.launch">
+  <!-- <include file="$(find gazebo_ros)/launch/empty_world.launch">
     <arg name="paused" value="true" />
     <arg name="use_sim_time" value="true" />
     <arg name="gui" value="true" />
     <arg name="headless" value="false" />
     <arg name="debug" value="false" />
-  </include>
+  </include> -->
+  <include file="$(find marsyard)/launch/arm_world.launch" />
+
   <node name="tf_footprint_base" pkg="tf" type="static_transform_publisher" args="0 0 0 0 0 0 base_link base_footprint 40" />
   <rosparam command="load" file="$(find rover_22_description_velodyne)/config/control.yaml" />
 
