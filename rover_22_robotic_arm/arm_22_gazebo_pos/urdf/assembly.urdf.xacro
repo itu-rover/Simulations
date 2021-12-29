@@ -1,9 +1,9 @@
 <?xml version="1.0" ?>
 <robot name="assembly" xmlns:xacro="http://www.ros.org/wiki/xacro">
 
-<xacro:include filename="$(find arm_22_gazebo)/urdf/materials.xacro" />
-<xacro:include filename="$(find arm_22_gazebo)/urdf/assembly.trans" />
-<xacro:include filename="$(find arm_22_gazebo)/urdf/assembly.gazebo" />
+<xacro:include filename="$(find arm_22_gazebo_pos)/urdf/materials.xacro" />
+<xacro:include filename="$(find arm_22_gazebo_pos)/urdf/assembly.trans" />
+<xacro:include filename="$(find arm_22_gazebo_pos)/urdf/assembly.gazebo" />
 
 <link name="world"> </link>
 
@@ -22,14 +22,14 @@
   <visual>
     <origin rpy="0 0 0" xyz="0 0 0"/>
     <geometry>
-      <mesh filename="package://arm_22_gazebo/meshes/base_link.stl" scale="0.001 0.001 0.001"/>
+      <mesh filename="package://arm_22_gazebo_pos/meshes/base_link.stl" scale="0.001 0.001 0.001"/>
     </geometry>
     <material name="silver"/>
   </visual>
   <collision>
     <origin rpy="0 0 0" xyz="0 0 0"/>
     <geometry>
-      <mesh filename="package://arm_22_gazebo/meshes/base_link.stl" scale="0.001 0.001 0.001"/>
+      <mesh filename="package://arm_22_gazebo_pos/meshes/base_link.stl" scale="0.001 0.001 0.001"/>
     </geometry>
   </collision>
 </link>
@@ -43,14 +43,14 @@
   <visual>
     <origin rpy="0 0 0" xyz="-0.0 -0.0 -0.0535"/>
     <geometry>
-      <mesh filename="package://arm_22_gazebo/meshes/1_2_link_1.stl" scale="0.001 0.001 0.001"/>
+      <mesh filename="package://arm_22_gazebo_pos/meshes/1_2_link_1.stl" scale="0.001 0.001 0.001"/>
     </geometry>
     <material name="silver"/>
   </visual>
   <collision>
     <origin rpy="0 0 0" xyz="-0.0 -0.0 -0.0535"/>
     <geometry>
-      <mesh filename="package://arm_22_gazebo/meshes/1_2_link_1.stl" scale="0.001 0.001 0.001"/>
+      <mesh filename="package://arm_22_gazebo_pos/meshes/1_2_link_1.stl" scale="0.001 0.001 0.001"/>
     </geometry>
   </collision>
 </link>
@@ -64,14 +64,14 @@
   <visual>
     <origin rpy="0 0 0" xyz="-0.0215 -0.0 -0.141"/>
     <geometry>
-      <mesh filename="package://arm_22_gazebo/meshes/2_3_link_1.stl" scale="0.001 0.001 0.001"/>
+      <mesh filename="package://arm_22_gazebo_pos/meshes/2_3_link_1.stl" scale="0.001 0.001 0.001"/>
     </geometry>
     <material name="silver"/>
   </visual>
   <collision>
     <origin rpy="0 0 0" xyz="-0.0215 -0.0 -0.141"/>
     <geometry>
-      <mesh filename="package://arm_22_gazebo/meshes/2_3_link_1.stl" scale="0.001 0.001 0.001"/>
+      <mesh filename="package://arm_22_gazebo_pos/meshes/2_3_link_1.stl" scale="0.001 0.001 0.001"/>
     </geometry>
   </collision>
 </link>
@@ -85,14 +85,14 @@
   <visual>
     <origin rpy="0 0 0" xyz="0.025 -0.0 -0.7965"/>
     <geometry>
-      <mesh filename="package://arm_22_gazebo/meshes/3_4_link_1.stl" scale="0.001 0.001 0.001"/>
+      <mesh filename="package://arm_22_gazebo_pos/meshes/3_4_link_1.stl" scale="0.001 0.001 0.001"/>
     </geometry>
     <material name="silver"/>
   </visual>
   <collision>
     <origin rpy="0 0 0" xyz="0.025 -0.0 -0.7965"/>
     <geometry>
-      <mesh filename="package://arm_22_gazebo/meshes/3_4_link_1.stl" scale="0.001 0.001 0.001"/>
+      <mesh filename="package://arm_22_gazebo_pos/meshes/3_4_link_1.stl" scale="0.001 0.001 0.001"/>
     </geometry>
   </collision>
 </link>
@@ -106,14 +106,14 @@
   <visual>
     <origin rpy="0 0 0" xyz="-0.0 0.14925 -0.7965"/>
     <geometry>
-      <mesh filename="package://arm_22_gazebo/meshes/4_5_link_1.stl" scale="0.001 0.001 0.001"/>
+      <mesh filename="package://arm_22_gazebo_pos/meshes/4_5_link_1.stl" scale="0.001 0.001 0.001"/>
     </geometry>
     <material name="silver"/>
   </visual>
   <collision>
     <origin rpy="0 0 0" xyz="-0.0 0.14925 -0.7965"/>
     <geometry>
-      <mesh filename="package://arm_22_gazebo/meshes/4_5_link_1.stl" scale="0.001 0.001 0.001"/>
+      <mesh filename="package://arm_22_gazebo_pos/meshes/4_5_link_1.stl" scale="0.001 0.001 0.001"/>
     </geometry>
   </collision>
 </link>
@@ -127,14 +127,14 @@
   <visual>
     <origin rpy="0 0 0" xyz="-0.055 0.54725 -0.7965"/>
     <geometry>
-      <mesh filename="package://arm_22_gazebo/meshes/5_6_link_1.stl" scale="0.001 0.001 0.001"/>
+      <mesh filename="package://arm_22_gazebo_pos/meshes/5_6_link_1.stl" scale="0.001 0.001 0.001"/>
     </geometry>
     <material name="silver"/>
   </visual>
   <collision>
     <origin rpy="0 0 0" xyz="-0.055 0.54725 -0.7965"/>
     <geometry>
-      <mesh filename="package://arm_22_gazebo/meshes/5_6_link_1.stl" scale="0.001 0.001 0.001"/>
+      <mesh filename="package://arm_22_gazebo_pos/meshes/5_6_link_1.stl" scale="0.001 0.001 0.001"/>
     </geometry>
   </collision>
 </link>
@@ -148,14 +148,14 @@
   <visual>
     <origin rpy="0 0 0" xyz="-0.0 0.56925 -0.7965"/>
     <geometry>
-      <mesh filename="package://arm_22_gazebo/meshes/gripper_link_1.stl" scale="0.001 0.001 0.001"/>
+      <mesh filename="package://arm_22_gazebo_pos/meshes/gripper_link_1.stl" scale="0.001 0.001 0.001"/>
     </geometry>
     <material name="silver"/>
   </visual>
   <collision>
     <origin rpy="0 0 0" xyz="-0.0 0.56925 -0.7965"/>
     <geometry>
-      <mesh filename="package://arm_22_gazebo/meshes/gripper_link_1.stl" scale="0.001 0.001 0.001"/>
+      <mesh filename="package://arm_22_gazebo_pos/meshes/gripper_link_1.stl" scale="0.001 0.001 0.001"/>
     </geometry>
   </collision>
 </link>
@@ -169,14 +169,14 @@
   <visual>
     <origin rpy="0 0 0" xyz="0.008 0.65425 -0.8115"/>
     <geometry>
-      <mesh filename="package://arm_22_gazebo/meshes/parmak_1_link_1.stl" scale="0.001 0.001 0.001"/>
+      <mesh filename="package://arm_22_gazebo_pos/meshes/parmak_1_link_1.stl" scale="0.001 0.001 0.001"/>
     </geometry>
     <material name="silver"/>
   </visual>
   <collision>
     <origin rpy="0 0 0" xyz="0.008 0.65425 -0.8115"/>
     <geometry>
-      <mesh filename="package://arm_22_gazebo/meshes/parmak_1_link_1.stl" scale="0.001 0.001 0.001"/>
+      <mesh filename="package://arm_22_gazebo_pos/meshes/parmak_1_link_1.stl" scale="0.001 0.001 0.001"/>
     </geometry>
   </collision>
 </link>
@@ -190,14 +190,14 @@
   <visual>
     <origin rpy="0 0 0" xyz="-0.008 0.65425 -0.8115"/>
     <geometry>
-      <mesh filename="package://arm_22_gazebo/meshes/parmak_2_link_1.stl" scale="0.001 0.001 0.001"/>
+      <mesh filename="package://arm_22_gazebo_pos/meshes/parmak_2_link_1.stl" scale="0.001 0.001 0.001"/>
     </geometry>
     <material name="silver"/>
   </visual>
   <collision>
     <origin rpy="0 0 0" xyz="-0.008 0.65425 -0.8115"/>
     <geometry>
-      <mesh filename="package://arm_22_gazebo/meshes/parmak_2_link_1.stl" scale="0.001 0.001 0.001"/>
+      <mesh filename="package://arm_22_gazebo_pos/meshes/parmak_2_link_1.stl" scale="0.001 0.001 0.001"/>
     </geometry>
   </collision>
 </link>
