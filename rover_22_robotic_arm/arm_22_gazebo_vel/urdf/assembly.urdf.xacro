@@ -1,0 +1,271 @@
+<?xml version="1.0" ?>
+<robot name="assembly" xmlns:xacro="http://www.ros.org/wiki/xacro">
+
+<xacro:include filename="$(find arm_22_gazebo_vel)/urdf/materials.xacro" />
+<xacro:include filename="$(find arm_22_gazebo_vel)/urdf/assembly.trans" />
+<xacro:include filename="$(find arm_22_gazebo_vel)/urdf/assembly.gazebo" />
+
+<link name="world"> </link>
+
+<joint name="dummy_joint" type="fixed">
+  <origin xyz="0 0 0.06" rpy="0 0 0"/>
+  <parent link="world"/>
+  <child link="base_link"/>
+</joint>
+
+<link name="base_link">
+  <inertial>
+    <origin rpy="0 0 0" xyz="2.111478230178841e-13 0.011682408428370204 0.005554773279956959"/>
+    <mass value="4.192131083267752"/>
+    <inertia ixx="0.007549" ixy="0.0" ixz="0.0" iyy="0.013998" iyz="0.000517" izz="0.018961"/>
+  </inertial>
+  <visual>
+    <origin rpy="0 0 0" xyz="0 0 0"/>
+    <geometry>
+      <mesh filename="package://arm_22_gazebo_vel/meshes/base_link.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin rpy="0 0 0" xyz="0 0 0"/>
+    <geometry>
+      <mesh filename="package://arm_22_gazebo_vel/meshes/base_link.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="1_2_link_1">
+  <inertial>
+    <origin rpy="0 0 0" xyz="-4.440892098500626e-18 1.4354722485038024e-15 0.07105772806777622"/>
+    <mass value="4.533031384288756"/>
+    <inertia ixx="0.01043" ixy="-0.0" ixz="-0.0" iyy="0.007523" iyz="0.0" izz="0.004306"/>
+  </inertial>
+  <visual>
+    <origin rpy="0 0 0" xyz="-0.0 -0.0 -0.0535"/>
+    <geometry>
+      <mesh filename="package://arm_22_gazebo_vel/meshes/1_2_link_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin rpy="0 0 0" xyz="-0.0 -0.0 -0.0535"/>
+    <geometry>
+      <mesh filename="package://arm_22_gazebo_vel/meshes/1_2_link_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="2_3_link_1">
+  <inertial>
+    <origin rpy="0 0 0" xyz="-0.021499999999999762 1.9407189213085804e-17 0.40425517026841495"/>
+    <mass value="11.422793723409663"/>
+    <inertia ixx="0.493811" ixy="-0.0" ixz="-0.0" iyy="0.49327" iyz="-0.0" izz="0.005454"/>
+  </inertial>
+  <visual>
+    <origin rpy="0 0 0" xyz="-0.0215 -0.0 -0.141"/>
+    <geometry>
+      <mesh filename="package://arm_22_gazebo_vel/meshes/2_3_link_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin rpy="0 0 0" xyz="-0.0215 -0.0 -0.141"/>
+    <geometry>
+      <mesh filename="package://arm_22_gazebo_vel/meshes/2_3_link_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="3_4_link_1">
+  <inertial>
+    <origin rpy="0 0 0" xyz="0.025000000000004786 -0.11600699772151865 1.1102230246251565e-16"/>
+    <mass value="2.1095820437502777"/>
+    <inertia ixx="0.004579" ixy="0.0" ixz="0.0" iyy="0.003013" iyz="0.0" izz="0.005799"/>
+  </inertial>
+  <visual>
+    <origin rpy="0 0 0" xyz="0.025 -0.0 -0.7965"/>
+    <geometry>
+      <mesh filename="package://arm_22_gazebo_vel/meshes/3_4_link_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin rpy="0 0 0" xyz="0.025 -0.0 -0.7965"/>
+    <geometry>
+      <mesh filename="package://arm_22_gazebo_vel/meshes/3_4_link_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="4_5_link_1">
+  <inertial>
+    <origin rpy="0 0 0" xyz="0.02631095454187837 -0.25285048089107715 1.1102230246251565e-16"/>
+    <mass value="6.936333570954899"/>
+    <inertia ixx="0.111412" ixy="0.023035" ixz="0.0" iyy="0.014343" iyz="0.0" izz="0.122701"/>
+  </inertial>
+  <visual>
+    <origin rpy="0 0 0" xyz="-0.0 0.14925 -0.7965"/>
+    <geometry>
+      <mesh filename="package://arm_22_gazebo_vel/meshes/4_5_link_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin rpy="0 0 0" xyz="-0.0 0.14925 -0.7965"/>
+    <geometry>
+      <mesh filename="package://arm_22_gazebo_vel/meshes/4_5_link_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="5_6_link_1">
+  <inertial>
+    <origin rpy="0 0 0" xyz="-0.03519954944823235 0.0 1.1102230246251565e-16"/>
+    <mass value="1.380651703874357"/>
+    <inertia ixx="0.000555" ixy="0.0" ixz="0.0" iyy="0.00102" iyz="0.0" izz="0.000981"/>
+  </inertial>
+  <visual>
+    <origin rpy="0 0 0" xyz="-0.055 0.54725 -0.7965"/>
+    <geometry>
+      <mesh filename="package://arm_22_gazebo_vel/meshes/5_6_link_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin rpy="0 0 0" xyz="-0.055 0.54725 -0.7965"/>
+    <geometry>
+      <mesh filename="package://arm_22_gazebo_vel/meshes/5_6_link_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="gripper_link_1">
+  <inertial>
+    <origin rpy="0 0 0" xyz="-1.9022434799199985e-14 -0.03416319786748656 0.0010518735260454104"/>
+    <mass value="0.17794522906388674"/>
+    <inertia ixx="0.000124" ixy="-0.0" ixz="0.0" iyy="0.000145" iyz="-1e-06" izz="0.000206"/>
+  </inertial>
+  <visual>
+    <origin rpy="0 0 0" xyz="-0.0 0.56925 -0.7965"/>
+    <geometry>
+      <mesh filename="package://arm_22_gazebo_vel/meshes/gripper_link_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin rpy="0 0 0" xyz="-0.0 0.56925 -0.7965"/>
+    <geometry>
+      <mesh filename="package://arm_22_gazebo_vel/meshes/gripper_link_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="parmak_1_link_1">
+  <inertial>
+    <origin rpy="0 0 0" xyz="-0.001967084910946904 -0.04536035309441244 -0.010499999999999954"/>
+    <mass value="0.17651437470268025"/>
+    <inertia ixx="0.000124" ixy="-0.0" ixz="0.0" iyy="9e-06" iyz="0.0" izz="0.00012"/>
+  </inertial>
+  <visual>
+    <origin rpy="0 0 0" xyz="0.008 0.65425 -0.8115"/>
+    <geometry>
+      <mesh filename="package://arm_22_gazebo_vel/meshes/parmak_1_link_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin rpy="0 0 0" xyz="0.008 0.65425 -0.8115"/>
+    <geometry>
+      <mesh filename="package://arm_22_gazebo_vel/meshes/parmak_1_link_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="parmak_2_link_1">
+  <inertial>
+    <origin rpy="0 0 0" xyz="0.0019670849109472976 -0.045360353094412664 -0.010499999999999954"/>
+    <mass value="0.17651437470268025"/>
+    <inertia ixx="0.000124" ixy="0.0" ixz="0.0" iyy="9e-06" iyz="0.0" izz="0.00012"/>
+  </inertial>
+  <visual>
+    <origin rpy="0 0 0" xyz="-0.008 0.65425 -0.8115"/>
+    <geometry>
+      <mesh filename="package://arm_22_gazebo_vel/meshes/parmak_2_link_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin rpy="0 0 0" xyz="-0.008 0.65425 -0.8115"/>
+    <geometry>
+      <mesh filename="package://arm_22_gazebo_vel/meshes/parmak_2_link_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<joint name="axis_1" type="continuous">
+  <origin rpy="0 0 0" xyz="0.0 0.0 0.0535"/>
+  <parent link="base_link"/>
+  <child link="1_2_link_1"/>
+  <axis xyz="0.0 0.0 1.0"/>
+</joint>
+
+<joint name="axis_2" type="continuous">
+  <origin rpy="0 0 0" xyz="0.0215 0.0 0.0875"/>
+  <parent link="1_2_link_1"/>
+  <child link="2_3_link_1"/>
+  <axis xyz="-1.0 0.0 0.0"/>
+</joint>
+
+<joint name="axis_3" type="continuous">
+  <origin rpy="0 0 0" xyz="-0.0465 0.0 0.6555"/>
+  <parent link="2_3_link_1"/>
+  <child link="3_4_link_1"/>
+  <axis xyz="-1.0 0.0 0.0"/>
+</joint>
+
+<joint name="axis_4" type="continuous">
+  <origin rpy="0 0 0" xyz="0.025 -0.14925 0.0"/>
+  <parent link="3_4_link_1"/>
+  <child link="4_5_link_1"/>
+  <axis xyz="-0.0 1.0 -0.0"/>
+</joint>
+
+<joint name="axis_5" type="continuous">
+  <origin rpy="0 0 0" xyz="0.055 -0.398 0.0"/>
+  <parent link="4_5_link_1"/>
+  <child link="5_6_link_1"/>
+  <axis xyz="-1.0 0.0 0.0"/>
+</joint>
+
+<joint name="axis_6" type="continuous">
+  <origin rpy="0 0 0" xyz="-0.055 -0.022 0.0"/>
+  <parent link="5_6_link_1"/>
+  <child link="gripper_link_1"/>
+  <axis xyz="-0.0 -1.0 0.0"/>
+</joint>
+
+<joint name="axis_parmak_1" type="revolute">
+  <origin rpy="0 0 0" xyz="-0.008 -0.085 0.015"/>
+  <parent link="gripper_link_1"/>
+  <child link="parmak_1_link_1"/>
+  <axis xyz="0.0 0.0 1.0"/>
+  <limit
+  lower="-0.5"
+  upper="0.05"
+  effort="200"
+  velocity="20" />
+</joint>
+
+<joint name="axis_parmak_2" type="revolute">
+  <origin rpy="0 0 0" xyz="0.008 -0.085 0.015"/>
+  <parent link="gripper_link_1"/>
+  <child link="parmak_2_link_1"/>
+  <axis xyz="0.0 0.0 1.0"/>
+  <limit
+  lower="-0.05"
+  upper="0.5"
+  effort="200"
+  velocity="20" />
+</joint>
+
+</robot>

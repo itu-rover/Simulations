@@ -1,8 +1,8 @@
 <?xml version="1.0"?>
 <package format="2">
-  <name>arm_22_gazebo</name>
+  <name>arm_22_gazebo_pos</name>
   <version>0.0.0</version>
-<description>The arm_22_gazebo package</description>
+<description>The arm_22_gazebo_pos package</description>
 
   <!-- One maintainer tag required, multiple allowed, one person per tag -->
   <!-- Example:  -->

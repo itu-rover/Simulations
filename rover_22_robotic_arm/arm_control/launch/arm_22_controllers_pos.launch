@@ -15,12 +15,12 @@
 
 
     <!-- manually created controllers of robotic arm -->
-    <rosparam file="$(find arm_control)/config/arm22_controller.yaml" command="load" />
+    <rosparam file="$(find arm_control)/config/arm22_controller_pos.yaml" command="load" />
     <node name="arm_controller_spawner" pkg="controller_manager" type="controller_manager" args="spawn rover_arm_controller" respawn="false" output="screen" />
 
 
     <!-- controllers for end effector fingers -->
-    <rosparam file="$(find arm_control)/config/arm22_controller.yaml" command="load" />
+    <rosparam file="$(find arm_control)/config/arm22_controller_pos.yaml" command="load" />
     <node name="finger_controller_spawner" pkg="controller_manager" type="controller_manager" args="spawn rover_arm_right_finger rover_arm_left_finger" respawn="false" output="screen" />
 
 
