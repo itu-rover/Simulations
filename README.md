@@ -13,8 +13,8 @@ Bu repo temelde 2 tür simülasyon barındırmaktadır rover_21_descriptions sad
 - ZED'li alt yürür
 - D435'lü yürür
 - Velodyne Lidarlı yürür
-rover_21_robotic_arm ise alt yürürle beraber robot kol içermektedir. burada kol üstünde 2 fpv kamera bir tane d435 bulunmaktadır.
---------------------------------------------------------------------------------------------------------------------------
+rover_21_robotic_arm ise alt yürürle beraber robot kol içermektedir. burada kol üstünde 2 fpv kamera bir tane d435 bulunmaktadır. Artık 22 sistemleri de eklenmiş durumdadır.
+
 ## IMU ve GPS gibi verilerin alınması
 Bu verilerin alınması için kurulması gerek paketler aşağıda komut konsola girildiği zaman kurulacaktır.
 
@@ -26,9 +26,20 @@ Ardından şu komut çalıştırılıp lokalizasyon sağlanır
 ```
 roslaunch rover_21_localization localization.launch
 ```
----------------------------------------------------------------------------------
+
+## rover_22_robotic_arm içindeki paketlerin çalıştırılması
+Burada iki robot kol simülasyonu biri pozisyon kontrolcüsü diğeri hız kontrolcüsü formatındadır. Bunları çalıştırmak için;
+
+Pozisyon Kontrolcülü Kol:
+
+`roslaunch arm_22_gazebo_pos arm_gazebo.launch`
+
+Hız Kontrolcülü Kol:
+
+`roslaunch arm_22_gazebo_vel arm_gazebo.launch`
+
 ## rover_22_descriptions içindeki paketlerin çalıştırılması
----------------------------------------------
+
 
 Gerekli paketler 21 sistemleri ile aynı olmakla birlikte ek olarak şu komutla indirilir paketler 
 ```
@@ -87,7 +98,7 @@ Hem Rviz Hem Gazebo için:
 
 -----------------------------------------------------------------------
 ## Araçların Joystick ile Kontrolü
--------------------------------------------
+
 Araçları Joystick ile kontrol etmek isterseniz `robot_drive` adında bir paket bulunmakta 21 paketleri için
 
 ```
@@ -102,9 +113,7 @@ Mod Switch: R2'ye bir kez basarak gerçekleşir simülasyon ilk açıldığında
 ```
 roslaunch robot_drive steering.launch
 ```
-Alt Yürür: L1 basılı tutarak Sol analao ileri geri X ekseni hareketi Sol sağ sol y ekseni hareketi Sağ analog sağ sol ise angular z hareketini sağlar.
-
------------------------------------------------------------------------------------------------------------------
+Alt Yürür: L1 basılı tutarak Sol analog ileri geri X ekseni hareketi Sol sağ sol y ekseni hareketi Sağ analog sağ sol ise angular z hareketini sağlar.
 
 ## rover_21_robotic_arm'ın çalıştırılması
 Simülasyonu çalıştırmak için öncellikle şu eklenili paketlere ihtiyacnız var 
@@ -130,9 +139,7 @@ Alt Yürür Sürüş: R1 basılı tutarak Turbo mod L1 basılı tutarak normal m
 
 Mod Switch: R2'ye bir kez basarak gerçekleşir simülasyon ilk açıldığında Robot kol sürüşü açıktır R2'ye basıldığında alt yürüre geçer. Dilerseniz R2 ye basarak tekrar robot kola geçebilirsiniz.
 
---------------------------------------------------------------------------------------------------------------------------
 ## rover_21_descriptions içindeki paketlerin çalıştırılması
---------------------------------------------------------------------------------------------------------------------------
 
 D435'li simülasyonun çalıştırılması için repo klonlandıktan sonra `catkin build` yapılır sonra `source devel/setup.bash` yapılır.
 
@@ -183,9 +190,8 @@ Hem Rviz Hem Gazebo için:
 
 `roslaunch rover_21_description_velodyne rviz_and_gazebo.launch`
 
------------------------------------------------------------------------------------------------
 ## marsyard
------------------------------------------------------------------------------------------------
+
 Marsyard paketi için blender_gazebo adında bir paket lazımdır fakat bu başka bir repodan submodule olarak çekilmektedir o yüzden bu repo aşagıdaki kod ile workspace'e clonelanmalı.
 
 ```
@@ -198,9 +204,9 @@ NOT 2: Eğer performans sıkıntı yaşarsanız haritalarda bana ulaşın.
 
 NOT 3: GIT LFS ile dae pushlayamama sorunu çözülmüştür.
 
-------------------------------------------------------------------------------------------
+
 ## ArTagler
-------------------------------------------------------------------------------------------
+
 Alt Yürürlü haritalar için Artaglar eklenmiştir. Artaglar kare prizma değil üçgen prizma olmuştur bunu kullanabilmek için bir .stl dosyası vardır ancak bunun için `blender_gazebo/sdf/landmark.sdf.xacro` dizininden `landmark.sdf.xacro` dosyasındaki 46. ve 60. satrılar kendi dizininize göre değiştirilmeli onun için `blender_gazebo/sdf/meshes` dizinine gidip konsoldan `pwd` komutunu kullanıp öğrenebilsiniz.
 
 TODO: Artag Konumları haritada biraz daha düzenlenecek ileriki commitlerde bu duruma bakılacak.
