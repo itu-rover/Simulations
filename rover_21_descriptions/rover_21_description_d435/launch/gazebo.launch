@@ -10,8 +10,11 @@
     <arg name="paused" value="false"/>
   </include>  -->
 
-  <!-- custom marsyard if you want empty world comment this line-->
-  <include file="$(find marsyard)/launch/marsyard.launch"/> 
+  <!-- Normal marsyard surface-->
+  <!-- <include file="$(find marsyard)/launch/marsyard.launch" /> -->
+  
+  <!-- empty artag environment-->
+  <include file="$(find marsyard)/launch/empty_artag.launch" />
 
   <node
     name="tf_footprint_base"
