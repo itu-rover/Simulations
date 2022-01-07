@@ -11,7 +11,12 @@
     <arg name="headless" value="false" />
     <arg name="debug" value="false" />
   </include> -->
-  <include file="$(find marsyard)/launch/arm_world.launch" />
+  
+  <!-- Normal marsyard surface-->
+  <!-- <include file="$(find marsyard)/launch/marsyard.launch" /> -->
+  
+  <!-- empty artag environment-->
+  <include file="$(find marsyard)/launch/empty_artag.launch" />
 
   <node name="tf_footprint_base" pkg="tf" type="static_transform_publisher" args="0 0 0 0 0 0 base_link base_footprint 40" />
   <rosparam command="load" file="$(find rover_22_description_d435)/config/control.yaml" />
