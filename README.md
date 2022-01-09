@@ -117,7 +117,7 @@ roslaunch robot_drive steering.launch
 ```
 Robot Kol sürüş: Sağ, Sol analog ve ok tuşları
 
-Alt Yürür: Sol analog angular z dönüşü sağlar sağ ve sol yaparak dönüş sağlarsınız sağ analog ise lineer x ve lineer y hareketi sağlar, yukarı aşağı lineer x sağ sol lineer y hareketi sağlar.
+Alt Yürür Sürüş: Sol analog angular z dönüşü sağlar sağ ve sol yaparak dönüş sağlarsınız sağ analog ise lineer x ve lineer y hareketi sağlar, yukarı aşağı lineer x sağ sol lineer y hareketi sağlar.
 
 Mod Switch: R2'ye bir kez basarak gerçekleşir simülasyon ilk açıldığında Robot kol sürüşü açıktır R2'ye basıldığında alt yürüre geçer. Dilerseniz R2 ye basarak tekrar robot kola geçebilirsiniz.
 
