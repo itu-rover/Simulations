@@ -113,7 +113,9 @@ Mod Switch: R2'ye bir kez basarak gerçekleşir simülasyon ilk açıldığında
 ```
 roslaunch robot_drive steering.launch
 ```
-Alt Yürür: L1 basılı tutarak Sol analog ileri geri X ekseni hareketi Sol sağ sol y ekseni hareketi Sağ analog sağ sol ise angular z hareketini sağlar.
+Robot Kol sürüş: Sağ, Sol analog ve ok tuşları
+Alt Yürür: Sol analog angular z dönüşü sağlar sağ ve sol yaparak dönüş sağlarsınız sağ analog ise lineer x ve lineer y hareketi sağlar, yukarı aşağı lineer x sağ sol lineer y hareketi sağlar.
+Mod Switch: R2'ye bir kez basarak gerçekleşir simülasyon ilk açıldığında Robot kol sürüşü açıktır R2'ye basıldığında alt yürüre geçer. Dilerseniz R2 ye basarak tekrar robot kola geçebilirsiniz.
 
 ## rover_21_robotic_arm'ın çalıştırılması
 Simülasyonu çalıştırmak için öncellikle şu eklenili paketlere ihtiyacnız var 
