@@ -11,5 +11,6 @@
     <param name="kill" value="4" type="int" />
     <param name="turbo" value="5" type="int" />
     <param name="turbo_scale" value="2" type="double" />
-    <node pkg="robot_drive" name="steering" type="steering.py" output="screen" /> <!-- -->
+    <node pkg="robot_drive" name="steering_v2" type="steering_v2" output="screen" /> <!-- -->
+    <node pkg="robot_drive" name="joy2twist" type="joy2twist" output="screen" /> <!-- -->
 </launch>

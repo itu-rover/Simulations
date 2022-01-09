@@ -204,3 +204,10 @@ include_directories(
 
 ## Add folders to be run by python nosetests
 # catkin_add_nosetests(test)
+add_definitions("-Wall -Wextra")
+
+add_executable(joy2twist src/steering_teleop/joy2twist.cpp)
+target_link_libraries(joy2twist ${catkin_LIBRARIES})
+
+add_executable(steering_v2 src//steering_teleop/steering_v2.cpp)
+target_link_libraries(steering_v2 ${catkin_LIBRARIES})

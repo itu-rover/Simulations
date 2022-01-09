@@ -24,10 +24,10 @@
 
   <node name="fake_joint_calibration" pkg="rostopic" type="rostopic" args="pub /calibrated std_msgs/Bool true" />
   <!-- Autonomous Steering Controller if you want autonomous just uncomment this line below-->
-  <!-- <node name="controller_spawner" pkg="controller_manager" type="spawner" output="screen" args="rover_joint_publisher rover_steering_controller rover_wheel_leftfront rover_wheel_rightfront rover_wheel_leftrear rover_wheel_rightrear" /> -->
+  <node name="controller_spawner" pkg="controller_manager" type="spawner" output="screen" args="rover_joint_publisher rover_steering_controller rover_wheel_leftfront rover_wheel_rightfront rover_wheel_leftrear rover_wheel_rightrear" />
 
   <!-- Teleoperation Steering Controller if you want teleoperation just uncomment this line below-->
-  <node name="controller_spawner" pkg="controller_manager" type="spawner" output="screen" args="rover_joint_publisher four_wheel_steering_controller" />
+  <!-- <node name="controller_spawner" pkg="controller_manager" type="spawner" output="screen" args="rover_joint_publisher four_wheel_steering_controller" /> -->
   <node name="robot_state_publisher" pkg="robot_state_publisher" type="robot_state_publisher" />
   <node pkg="interactive_marker_twist_server" type="marker_server" name="twist_marker_server" output="screen" />
   
