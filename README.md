@@ -43,7 +43,7 @@ Hız Kontrolcülü Kol:
 
 Gerekli paketler 21 sistemleri ile aynı olmakla birlikte ek olarak şu komutla indirilir paketler 
 ```
-sudo apt install ros-melodic-four-wheel-steering-controller && sudo apt install ros-melodic-four-wheel-steering-msgs && sudo apt install ros-melodic-joint-trajectory-controller && sudo apt install ros-melodic-velocity-controllers && sudo apt install ros-melodic-urdf-geometry-parser
+sudo apt install ros-melodic-joint-trajectory-controller && sudo apt install ros-melodic-velocity-controllers && sudo apt install ros-melodic-urdf-geometry-parser
 ```
 --------------------------------------------------------------------------------------------------------------------------
 
