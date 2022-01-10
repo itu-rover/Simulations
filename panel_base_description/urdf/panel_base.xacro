@@ -1,574 +1,582 @@
 <?xml version="1.0" ?>
-<robot name="panel_base" xmlns:xacro="http://www.ros.org/wiki/xacro">
+<robot name="panel_base"
+  xmlns:xacro="http://www.ros.org/wiki/xacro">
 
-<xacro:include filename="$(find panel_base_description)/urdf/materials.xacro" />
-<xacro:include filename="$(find panel_base_description)/urdf/panel_base.trans" />
-<xacro:include filename="$(find panel_base_description)/urdf/panel_base.gazebo" />
-<link name="base_link">
-  <inertial>
-    <origin rpy="0 0 0" xyz="0.06511362426152816 0.015003868286298343 0.6005550723346115"/>
-    <mass value="10863.544288992367"/>
-    <inertia ixx="2524.540106" ixy="-10.92074" ixz="13.738953" iyy="2514.460837" iyz="-4.317618" izz="1913.520199"/>
-  </inertial>
-  <visual>
-    <origin rpy="0 0 0" xyz="0 0 0"/>
-    <geometry>
-      <mesh filename="package://panel_base_description/meshes/base_link.stl" scale="0.001 0.001 0.001"/>
-    </geometry>
-    <material name="silver"/>
-  </visual>
-  <collision>
-    <origin rpy="0 0 0" xyz="0 0 0"/>
-    <geometry>
-      <mesh filename="package://panel_base_description/meshes/base_link.stl" scale="0.001 0.001 0.001"/>
-    </geometry>
-  </collision>
-</link>
+  <xacro:include filename="$(find panel_base_description)/urdf/materials.xacro" />
+  <xacro:include filename="$(find panel_base_description)/urdf/panel_base.trans" />
+  <xacro:include filename="$(find panel_base_description)/urdf/panel_base.gazebo" />
+  <link name="world">
+  </link>
+  <joint name="world_joint" type="fixed">
+    <origin xyz="0 0 0.5" rpy="0 0 0" />
+    <parent link="world" />
+    <child link="base_link" />
+  </joint>
+  <link name="base_link">
+    <inertial>
+      <origin rpy="0 0 0" xyz="0.06511362426152816 0.015003868286298343 0.6005550723346115"/>
+      <mass value="10863.544288992367"/>
+      <inertia ixx="2524.540106" ixy="-10.92074" ixz="13.738953" iyy="2514.460837" iyz="-4.317618" izz="1913.520199"/>
+    </inertial>
+    <visual>
+      <origin rpy="0 0 0" xyz="0 0 0"/>
+      <geometry>
+        <mesh filename="package://panel_base_description/meshes/base_link.stl" scale="0.001 0.001 0.001"/>
+      </geometry>
+      <material name="silver"/>
+    </visual>
+    <collision>
+      <origin rpy="0 0 0" xyz="0 0 0"/>
+      <geometry>
+        <mesh filename="package://panel_base_description/meshes/base_link.stl" scale="0.001 0.001 0.001"/>
+      </geometry>
+    </collision>
+  </link>
 
-<link name="LID_v2_1">
-  <inertial>
-    <origin rpy="0 0 0" xyz="-0.17558902614773753 0.10137662156005395 -0.009908204524496311"/>
-    <mass value="4.56314999999999"/>
-    <inertia ixx="0.998685" ixy="0.239189" ixz="0.001124" iyy="1.274877" iyz="-0.000649" izz="1.486785"/>
-  </inertial>
-  <visual>
-    <origin rpy="0 0 0" xyz="0.08109 -0.099434 -0.394773"/>
-    <geometry>
-      <mesh filename="package://panel_base_description/meshes/LID_v2_1.stl" scale="0.001 0.001 0.001"/>
-    </geometry>
-    <material name="silver"/>
-  </visual>
-  <collision>
-    <origin rpy="0 0 0" xyz="0.08109 -0.099434 -0.394773"/>
-    <geometry>
-      <mesh filename="package://panel_base_description/meshes/LID_v2_1.stl" scale="0.001 0.001 0.001"/>
-    </geometry>
-  </collision>
-</link>
+  <link name="LID_v2_1">
+    <inertial>
+      <origin rpy="0 0 0" xyz="-0.17558902614773753 0.10137662156005395 -0.009908204524496311"/>
+      <mass value="4.56314999999999"/>
+      <inertia ixx="0.998685" ixy="0.239189" ixz="0.001124" iyy="1.274877" iyz="-0.000649" izz="1.486785"/>
+    </inertial>
+    <visual>
+      <origin rpy="0 0 0" xyz="0.08109 -0.099434 -0.394773"/>
+      <geometry>
+        <mesh filename="package://panel_base_description/meshes/LID_v2_1.stl" scale="0.001 0.001 0.001"/>
+      </geometry>
+      <material name="silver"/>
+    </visual>
+    <collision>
+      <origin rpy="0 0 0" xyz="0.08109 -0.099434 -0.394773"/>
+      <geometry>
+        <mesh filename="package://panel_base_description/meshes/LID_v2_1.stl" scale="0.001 0.001 0.001"/>
+      </geometry>
+    </collision>
+  </link>
 
-<link name="weight_v2_1">
-  <inertial>
-    <origin rpy="0 0 0" xyz="0.160811660533447 0.09284474955090975 -2.1640764535924006e-07"/>
-    <mass value="5.0034699999999995"/>
-    <inertia ixx="0.753377" ixy="0.025903" ixz="0.0" iyy="0.723467" iyz="0.0" izz="1.453545"/>
-  </inertial>
-  <visual>
-    <origin rpy="0 0 0" xyz="-0.244391 -0.124434 -0.519773"/>
-    <geometry>
-      <mesh filename="package://panel_base_description/meshes/weight_v2_1.stl" scale="0.001 0.001 0.001"/>
-    </geometry>
-    <material name="silver"/>
-  </visual>
-  <collision>
-    <origin rpy="0 0 0" xyz="-0.244391 -0.124434 -0.519773"/>
-    <geometry>
-      <mesh filename="package://panel_base_description/meshes/weight_v2_1.stl" scale="0.001 0.001 0.001"/>
-    </geometry>
-  </collision>
-</link>
+  <link name="weight_v2_1">
+    <inertial>
+      <origin rpy="0 0 0" xyz="0.160811660533447 0.09284474955090975 -2.1640764535924006e-07"/>
+      <mass value="5.0034699999999995"/>
+      <inertia ixx="0.753377" ixy="0.025903" ixz="0.0" iyy="0.723467" iyz="0.0" izz="1.453545"/>
+    </inertial>
+    <visual>
+      <origin rpy="0 0 0" xyz="-0.244391 -0.124434 -0.519773"/>
+      <geometry>
+        <mesh filename="package://panel_base_description/meshes/weight_v2_1.stl" scale="0.001 0.001 0.001"/>
+      </geometry>
+      <material name="silver"/>
+    </visual>
+    <collision>
+      <origin rpy="0 0 0" xyz="-0.244391 -0.124434 -0.519773"/>
+      <geometry>
+        <mesh filename="package://panel_base_description/meshes/weight_v2_1.stl" scale="0.001 0.001 0.001"/>
+      </geometry>
+    </collision>
+  </link>
 
-<link name="base_feet_v4_1">
-  <inertial>
-    <origin rpy="0 0 0" xyz="-2.7755575615628914e-17 0.7836949299813364 -0.3989426679019347"/>
-    <mass value="292.07815114178516"/>
-    <inertia ixx="28.619404" ixy="-0.0" ixz="0.0" iyy="14.485216" iyz="11.87614" izz="20.805874"/>
-  </inertial>
-  <visual>
-    <origin rpy="0 0 0" xyz="-0.06 -0.550892 -0.384773"/>
-    <geometry>
-      <mesh filename="package://panel_base_description/meshes/base_feet_v4_1.stl" scale="0.001 0.001 0.001"/>
-    </geometry>
-    <material name="silver"/>
-  </visual>
-  <collision>
-    <origin rpy="0 0 0" xyz="-0.06 -0.550892 -0.384773"/>
-    <geometry>
-      <mesh filename="package://panel_base_description/meshes/base_feet_v4_1.stl" scale="0.001 0.001 0.001"/>
-    </geometry>
-  </collision>
-</link>
+  <link name="base_feet_v4_1">
+    <inertial>
+      <origin rpy="0 0 0" xyz="-2.7755575615628914e-17 0.7836949299813364 -0.3989426679019347"/>
+      <mass value="292.07815114178516"/>
+      <inertia ixx="28.619404" ixy="-0.0" ixz="0.0" iyy="14.485216" iyz="11.87614" izz="20.805874"/>
+    </inertial>
+    <visual>
+      <origin rpy="0 0 0" xyz="-0.06 -0.550892 -0.384773"/>
+      <geometry>
+        <mesh filename="package://panel_base_description/meshes/base_feet_v4_1.stl" scale="0.001 0.001 0.001"/>
+      </geometry>
+      <material name="silver"/>
+    </visual>
+    <collision>
+      <origin rpy="0 0 0" xyz="-0.06 -0.550892 -0.384773"/>
+      <geometry>
+        <mesh filename="package://panel_base_description/meshes/base_feet_v4_1.stl" scale="0.001 0.001 0.001"/>
+      </geometry>
+    </collision>
+  </link>
 
-<link name="base_feet_v4__2__1">
-  <inertial>
-    <origin rpy="0 0 0" xyz="0.6786995983756393 -0.39184761414024416 -0.3989426679019343"/>
-    <mass value="292.07815114178516"/>
-    <inertia ixx="18.018763" ixy="6.120283" ixz="10.285039" iyy="25.085857" iyz="-5.93807" izz="20.805874"/>
-  </inertial>
-  <visual>
-    <origin rpy="0 0 0" xyz="-0.521519 0.248482 -0.384773"/>
-    <geometry>
-      <mesh filename="package://panel_base_description/meshes/base_feet_v4__2__1.stl" scale="0.001 0.001 0.001"/>
-    </geometry>
-    <material name="silver"/>
-  </visual>
-  <collision>
-    <origin rpy="0 0 0" xyz="-0.521519 0.248482 -0.384773"/>
-    <geometry>
-      <mesh filename="package://panel_base_description/meshes/base_feet_v4__2__1.stl" scale="0.001 0.001 0.001"/>
-    </geometry>
-  </collision>
-</link>
+  <link name="base_feet_v4__2__1">
+    <inertial>
+      <origin rpy="0 0 0" xyz="0.6786995983756393 -0.39184761414024416 -0.3989426679019343"/>
+      <mass value="292.07815114178516"/>
+      <inertia ixx="18.018763" ixy="6.120283" ixz="10.285039" iyy="25.085857" iyz="-5.93807" izz="20.805874"/>
+    </inertial>
+    <visual>
+      <origin rpy="0 0 0" xyz="-0.521519 0.248482 -0.384773"/>
+      <geometry>
+        <mesh filename="package://panel_base_description/meshes/base_feet_v4__2__1.stl" scale="0.001 0.001 0.001"/>
+      </geometry>
+      <material name="silver"/>
+    </visual>
+    <collision>
+      <origin rpy="0 0 0" xyz="-0.521519 0.248482 -0.384773"/>
+      <geometry>
+        <mesh filename="package://panel_base_description/meshes/base_feet_v4__2__1.stl" scale="0.001 0.001 0.001"/>
+      </geometry>
+    </collision>
+  </link>
 
-<link name="base_feet_v4__1__1">
-  <inertial>
-    <origin rpy="0 0 0" xyz="-0.678699598375639 -0.3918476141402436 -0.3989426679019341"/>
-    <mass value="292.07815114178516"/>
-    <inertia ixx="18.018763" ixy="-6.120283" ixz="-10.285039" iyy="25.085857" iyz="-5.93807" izz="20.805874"/>
-  </inertial>
-  <visual>
-    <origin rpy="0 0 0" xyz="0.401519 0.248482 -0.384773"/>
-    <geometry>
-      <mesh filename="package://panel_base_description/meshes/base_feet_v4__1__1.stl" scale="0.001 0.001 0.001"/>
-    </geometry>
-    <material name="silver"/>
-  </visual>
-  <collision>
-    <origin rpy="0 0 0" xyz="0.401519 0.248482 -0.384773"/>
-    <geometry>
-      <mesh filename="package://panel_base_description/meshes/base_feet_v4__1__1.stl" scale="0.001 0.001 0.001"/>
-    </geometry>
-  </collision>
-</link>
+  <link name="base_feet_v4__1__1">
+    <inertial>
+      <origin rpy="0 0 0" xyz="-0.678699598375639 -0.3918476141402436 -0.3989426679019341"/>
+      <mass value="292.07815114178516"/>
+      <inertia ixx="18.018763" ixy="-6.120283" ixz="-10.285039" iyy="25.085857" iyz="-5.93807" izz="20.805874"/>
+    </inertial>
+    <visual>
+      <origin rpy="0 0 0" xyz="0.401519 0.248482 -0.384773"/>
+      <geometry>
+        <mesh filename="package://panel_base_description/meshes/base_feet_v4__1__1.stl" scale="0.001 0.001 0.001"/>
+      </geometry>
+      <material name="silver"/>
+    </visual>
+    <collision>
+      <origin rpy="0 0 0" xyz="0.401519 0.248482 -0.384773"/>
+      <geometry>
+        <mesh filename="package://panel_base_description/meshes/base_feet_v4__1__1.stl" scale="0.001 0.001 0.001"/>
+      </geometry>
+    </collision>
+  </link>
 
-<link name="Hat_v3_1">
-  <inertial>
-    <origin rpy="0 0 0" xyz="-1.1102230246251565e-16 -9.943305112961043e-08 0.21650586623661727"/>
-    <mass value="2487.4656674462667"/>
-    <inertia ixx="201.329079" ixy="-0.0" ixz="-0.0" iyy="201.329079" iyz="-0.0" izz="262.738561"/>
-  </inertial>
-  <visual>
-    <origin rpy="0 0 0" xyz="-0.06 -0.017976 -1.244773"/>
-    <geometry>
-      <mesh filename="package://panel_base_description/meshes/Hat_v3_1.stl" scale="0.001 0.001 0.001"/>
-    </geometry>
-    <material name="silver"/>
-  </visual>
-  <collision>
-    <origin rpy="0 0 0" xyz="-0.06 -0.017976 -1.244773"/>
-    <geometry>
-      <mesh filename="package://panel_base_description/meshes/Hat_v3_1.stl" scale="0.001 0.001 0.001"/>
-    </geometry>
-  </collision>
-</link>
+  <link name="Hat_v3_1">
+    <inertial>
+      <origin rpy="0 0 0" xyz="-1.1102230246251565e-16 -9.943305112961043e-08 0.21650586623661727"/>
+      <mass value="2487.4656674462667"/>
+      <inertia ixx="201.329079" ixy="-0.0" ixz="-0.0" iyy="201.329079" iyz="-0.0" izz="262.738561"/>
+    </inertial>
+    <visual>
+      <origin rpy="0 0 0" xyz="-0.06 -0.017976 -1.244773"/>
+      <geometry>
+        <mesh filename="package://panel_base_description/meshes/Hat_v3_1.stl" scale="0.001 0.001 0.001"/>
+      </geometry>
+      <material name="silver"/>
+    </visual>
+    <collision>
+      <origin rpy="0 0 0" xyz="-0.06 -0.017976 -1.244773"/>
+      <geometry>
+        <mesh filename="package://panel_base_description/meshes/Hat_v3_1.stl" scale="0.001 0.001 0.001"/>
+      </geometry>
+    </collision>
+  </link>
 
-<link name="keybord_v6_v1_1">
-  <inertial>
-    <origin rpy="0 0 0" xyz="0.0021202434618414617 -0.003086383812323068 0.0018304670746733254"/>
-    <mass value="0.31311468306567314"/>
-    <inertia ixx="0.000137" ixy="-1e-06" ixz="-6e-06" iyy="0.001192" iyz="-1e-06" izz="0.001059"/>
-  </inertial>
-  <visual>
-    <origin rpy="0 0 0" xyz="-0.06 0.444941 -0.344773"/>
-    <geometry>
-      <mesh filename="package://panel_base_description/meshes/keybord_v6_v1_1.stl" scale="0.001 0.001 0.001"/>
-    </geometry>
-    <material name="silver"/>
-  </visual>
-  <collision>
-    <origin rpy="0 0 0" xyz="-0.06 0.444941 -0.344773"/>
-    <geometry>
-      <mesh filename="package://panel_base_description/meshes/keybord_v6_v1_1.stl" scale="0.001 0.001 0.001"/>
-    </geometry>
-  </collision>
-</link>
+  <link name="keybord_v6_v1_1">
+    <inertial>
+      <origin rpy="0 0 0" xyz="0.0021202434618414617 -0.003086383812323068 0.0018304670746733254"/>
+      <mass value="0.31311468306567314"/>
+      <inertia ixx="0.000137" ixy="-1e-06" ixz="-6e-06" iyy="0.001192" iyz="-1e-06" izz="0.001059"/>
+    </inertial>
+    <visual>
+      <origin rpy="0 0 0" xyz="-0.06 0.444941 -0.344773"/>
+      <geometry>
+        <mesh filename="package://panel_base_description/meshes/keybord_v6_v1_1.stl" scale="0.001 0.001 0.001"/>
+      </geometry>
+      <material name="silver"/>
+    </visual>
+    <collision>
+      <origin rpy="0 0 0" xyz="-0.06 0.444941 -0.344773"/>
+      <geometry>
+        <mesh filename="package://panel_base_description/meshes/keybord_v6_v1_1.stl" scale="0.001 0.001 0.001"/>
+      </geometry>
+    </collision>
+  </link>
 
-<link name="Kapak_1_v15_1">
-  <inertial>
-    <origin rpy="0 0 0" xyz="0.13471878292451106 0.007189274164557391 -0.049967347917310556"/>
-    <mass value="4.191774356931193"/>
-    <inertia ixx="0.013824" ixy="0.000117" ixz="-1.5e-05" iyy="0.038379" iyz="3e-06" izz="0.024685"/>
-  </inertial>
-  <visual>
-    <origin rpy="0 0 0" xyz="0.075 0.547441 -0.394773"/>
-    <geometry>
-      <mesh filename="package://panel_base_description/meshes/Kapak_1_v15_1.stl" scale="0.001 0.001 0.001"/>
-    </geometry>
-    <material name="silver"/>
-  </visual>
-  <collision>
-    <origin rpy="0 0 0" xyz="0.075 0.547441 -0.394773"/>
-    <geometry>
-      <mesh filename="package://panel_base_description/meshes/Kapak_1_v15_1.stl" scale="0.001 0.001 0.001"/>
-    </geometry>
-  </collision>
-</link>
+  <link name="Kapak_1_v15_1">
+    <inertial>
+      <origin rpy="0 0 0" xyz="0.13471878292451106 0.007189274164557391 -0.049967347917310556"/>
+      <mass value="4.191774356931193"/>
+      <inertia ixx="0.013824" ixy="0.000117" ixz="-1.5e-05" iyy="0.038379" iyz="3e-06" izz="0.024685"/>
+    </inertial>
+    <visual>
+      <origin rpy="0 0 0" xyz="0.075 0.547441 -0.394773"/>
+      <geometry>
+        <mesh filename="package://panel_base_description/meshes/Kapak_1_v15_1.stl" scale="0.001 0.001 0.001"/>
+      </geometry>
+      <material name="silver"/>
+    </visual>
+    <collision>
+      <origin rpy="0 0 0" xyz="0.075 0.547441 -0.394773"/>
+      <geometry>
+        <mesh filename="package://panel_base_description/meshes/Kapak_1_v15_1.stl" scale="0.001 0.001 0.001"/>
+      </geometry>
+    </collision>
+  </link>
 
-<link name="Power_Switch_v1__4__1">
-  <inertial>
-    <origin rpy="0 0 0" xyz="0.0002966131809387096 -0.006958102859998427 -4.471703652364489e-06"/>
-    <mass value="0.024410578629013545"/>
-    <inertia ixx="1e-06" ixy="0.0" ixz="-0.0" iyy="1e-06" iyz="0.0" izz="1e-06"/>
-  </inertial>
-  <visual>
-    <origin rpy="0 0 0" xyz="0.183937 0.534941 -0.652587"/>
-    <geometry>
-      <mesh filename="package://panel_base_description/meshes/Power_Switch_v1__4__1.stl" scale="0.001 0.001 0.001"/>
-    </geometry>
-    <material name="silver"/>
-  </visual>
-  <collision>
-    <origin rpy="0 0 0" xyz="0.183937 0.534941 -0.652587"/>
-    <geometry>
-      <mesh filename="package://panel_base_description/meshes/Power_Switch_v1__4__1.stl" scale="0.001 0.001 0.001"/>
-    </geometry>
-  </collision>
-</link>
+  <link name="Power_Switch_v1__4__1">
+    <inertial>
+      <origin rpy="0 0 0" xyz="0.0002966131809387096 -0.006958102859998427 -4.471703652364489e-06"/>
+      <mass value="0.024410578629013545"/>
+      <inertia ixx="1e-06" ixy="0.0" ixz="-0.0" iyy="1e-06" iyz="0.0" izz="1e-06"/>
+    </inertial>
+    <visual>
+      <origin rpy="0 0 0" xyz="0.183937 0.534941 -0.652587"/>
+      <geometry>
+        <mesh filename="package://panel_base_description/meshes/Power_Switch_v1__4__1.stl" scale="0.001 0.001 0.001"/>
+      </geometry>
+      <material name="silver"/>
+    </visual>
+    <collision>
+      <origin rpy="0 0 0" xyz="0.183937 0.534941 -0.652587"/>
+      <geometry>
+        <mesh filename="package://panel_base_description/meshes/Power_Switch_v1__4__1.stl" scale="0.001 0.001 0.001"/>
+      </geometry>
+    </collision>
+  </link>
 
-<link name="Power_Switch_v1__1__1">
-  <inertial>
-    <origin rpy="0 0 0" xyz="0.0002969418682636227 -0.006958102859998427 -4.471703652697556e-06"/>
-    <mass value="0.024410578629013545"/>
-    <inertia ixx="1e-06" ixy="0.0" ixz="-0.0" iyy="1e-06" iyz="0.0" izz="1e-06"/>
-  </inertial>
-  <visual>
-    <origin rpy="0 0 0" xyz="0.1476 0.534941 -0.652587"/>
-    <geometry>
-      <mesh filename="package://panel_base_description/meshes/Power_Switch_v1__1__1.stl" scale="0.001 0.001 0.001"/>
-    </geometry>
-    <material name="silver"/>
-  </visual>
-  <collision>
-    <origin rpy="0 0 0" xyz="0.1476 0.534941 -0.652587"/>
-    <geometry>
-      <mesh filename="package://panel_base_description/meshes/Power_Switch_v1__1__1.stl" scale="0.001 0.001 0.001"/>
-    </geometry>
-  </collision>
-</link>
+  <link name="Power_Switch_v1__1__1">
+    <inertial>
+      <origin rpy="0 0 0" xyz="0.0002969418682636227 -0.006958102859998427 -4.471703652697556e-06"/>
+      <mass value="0.024410578629013545"/>
+      <inertia ixx="1e-06" ixy="0.0" ixz="-0.0" iyy="1e-06" iyz="0.0" izz="1e-06"/>
+    </inertial>
+    <visual>
+      <origin rpy="0 0 0" xyz="0.1476 0.534941 -0.652587"/>
+      <geometry>
+        <mesh filename="package://panel_base_description/meshes/Power_Switch_v1__1__1.stl" scale="0.001 0.001 0.001"/>
+      </geometry>
+      <material name="silver"/>
+    </visual>
+    <collision>
+      <origin rpy="0 0 0" xyz="0.1476 0.534941 -0.652587"/>
+      <geometry>
+        <mesh filename="package://panel_base_description/meshes/Power_Switch_v1__1__1.stl" scale="0.001 0.001 0.001"/>
+      </geometry>
+    </collision>
+  </link>
 
-<link name="Power_Switch_v1_1">
-  <inertial>
-    <origin rpy="0 0 0" xyz="0.0002969418682635949 -0.006958102859997983 -4.471703652697556e-06"/>
-    <mass value="0.024410578629013545"/>
-    <inertia ixx="1e-06" ixy="0.0" ixz="-0.0" iyy="1e-06" iyz="0.0" izz="1e-06"/>
-  </inertial>
-  <visual>
-    <origin rpy="0 0 0" xyz="0.111313 0.534941 -0.652637"/>
-    <geometry>
-      <mesh filename="package://panel_base_description/meshes/Power_Switch_v1_1.stl" scale="0.001 0.001 0.001"/>
-    </geometry>
-    <material name="silver"/>
-  </visual>
-  <collision>
-    <origin rpy="0 0 0" xyz="0.111313 0.534941 -0.652637"/>
-    <geometry>
-      <mesh filename="package://panel_base_description/meshes/Power_Switch_v1_1.stl" scale="0.001 0.001 0.001"/>
-    </geometry>
-  </collision>
-</link>
+  <link name="Power_Switch_v1_1">
+    <inertial>
+      <origin rpy="0 0 0" xyz="0.0002969418682635949 -0.006958102859997983 -4.471703652697556e-06"/>
+      <mass value="0.024410578629013545"/>
+      <inertia ixx="1e-06" ixy="0.0" ixz="-0.0" iyy="1e-06" iyz="0.0" izz="1e-06"/>
+    </inertial>
+    <visual>
+      <origin rpy="0 0 0" xyz="0.111313 0.534941 -0.652637"/>
+      <geometry>
+        <mesh filename="package://panel_base_description/meshes/Power_Switch_v1_1.stl" scale="0.001 0.001 0.001"/>
+      </geometry>
+      <material name="silver"/>
+    </visual>
+    <collision>
+      <origin rpy="0 0 0" xyz="0.111313 0.534941 -0.652637"/>
+      <geometry>
+        <mesh filename="package://panel_base_description/meshes/Power_Switch_v1_1.stl" scale="0.001 0.001 0.001"/>
+      </geometry>
+    </collision>
+  </link>
 
-<link name="Power_Switch_v1__2__1">
-  <inertial>
-    <origin rpy="0 0 0" xyz="0.00029694186826295654 -0.006958102859997539 -4.471703652697556e-06"/>
-    <mass value="0.024410578629013545"/>
-    <inertia ixx="1e-06" ixy="0.0" ixz="-0.0" iyy="1e-06" iyz="0.0" izz="1e-06"/>
-  </inertial>
-  <visual>
-    <origin rpy="0 0 0" xyz="-0.231313 0.534941 -0.652637"/>
-    <geometry>
-      <mesh filename="package://panel_base_description/meshes/Power_Switch_v1__2__1.stl" scale="0.001 0.001 0.001"/>
-    </geometry>
-    <material name="silver"/>
-  </visual>
-  <collision>
-    <origin rpy="0 0 0" xyz="-0.231313 0.534941 -0.652637"/>
-    <geometry>
-      <mesh filename="package://panel_base_description/meshes/Power_Switch_v1__2__1.stl" scale="0.001 0.001 0.001"/>
-    </geometry>
-  </collision>
-</link>
+  <link name="Power_Switch_v1__2__1">
+    <inertial>
+      <origin rpy="0 0 0" xyz="0.00029694186826295654 -0.006958102859997539 -4.471703652697556e-06"/>
+      <mass value="0.024410578629013545"/>
+      <inertia ixx="1e-06" ixy="0.0" ixz="-0.0" iyy="1e-06" iyz="0.0" izz="1e-06"/>
+    </inertial>
+    <visual>
+      <origin rpy="0 0 0" xyz="-0.231313 0.534941 -0.652637"/>
+      <geometry>
+        <mesh filename="package://panel_base_description/meshes/Power_Switch_v1__2__1.stl" scale="0.001 0.001 0.001"/>
+      </geometry>
+      <material name="silver"/>
+    </visual>
+    <collision>
+      <origin rpy="0 0 0" xyz="-0.231313 0.534941 -0.652637"/>
+      <geometry>
+        <mesh filename="package://panel_base_description/meshes/Power_Switch_v1__2__1.stl" scale="0.001 0.001 0.001"/>
+      </geometry>
+    </collision>
+  </link>
 
-<link name="Power_Switch_v1__3__1">
-  <inertial>
-    <origin rpy="0 0 0" xyz="0.00029694186826295654 -0.006958102859998427 -4.471703652586534e-06"/>
-    <mass value="0.024410578629013545"/>
-    <inertia ixx="1e-06" ixy="0.0" ixz="-0.0" iyy="1e-06" iyz="0.0" izz="1e-06"/>
-  </inertial>
-  <visual>
-    <origin rpy="0 0 0" xyz="-0.2676 0.534941 -0.652587"/>
-    <geometry>
-      <mesh filename="package://panel_base_description/meshes/Power_Switch_v1__3__1.stl" scale="0.001 0.001 0.001"/>
-    </geometry>
-    <material name="silver"/>
-  </visual>
-  <collision>
-    <origin rpy="0 0 0" xyz="-0.2676 0.534941 -0.652587"/>
-    <geometry>
-      <mesh filename="package://panel_base_description/meshes/Power_Switch_v1__3__1.stl" scale="0.001 0.001 0.001"/>
-    </geometry>
-  </collision>
-</link>
+  <link name="Power_Switch_v1__3__1">
+    <inertial>
+      <origin rpy="0 0 0" xyz="0.00029694186826295654 -0.006958102859998427 -4.471703652586534e-06"/>
+      <mass value="0.024410578629013545"/>
+      <inertia ixx="1e-06" ixy="0.0" ixz="-0.0" iyy="1e-06" iyz="0.0" izz="1e-06"/>
+    </inertial>
+    <visual>
+      <origin rpy="0 0 0" xyz="-0.2676 0.534941 -0.652587"/>
+      <geometry>
+        <mesh filename="package://panel_base_description/meshes/Power_Switch_v1__3__1.stl" scale="0.001 0.001 0.001"/>
+      </geometry>
+      <material name="silver"/>
+    </visual>
+    <collision>
+      <origin rpy="0 0 0" xyz="-0.2676 0.534941 -0.652587"/>
+      <geometry>
+        <mesh filename="package://panel_base_description/meshes/Power_Switch_v1__3__1.stl" scale="0.001 0.001 0.001"/>
+      </geometry>
+    </collision>
+  </link>
 
-<link name="Power_Switch_v1__5__1">
-  <inertial>
-    <origin rpy="0 0 0" xyz="0.0002972705555878141 -0.006958102859998427 -4.471703652586534e-06"/>
-    <mass value="0.024410578629013545"/>
-    <inertia ixx="1e-06" ixy="0.0" ixz="-0.0" iyy="1e-06" iyz="0.0" izz="1e-06"/>
-  </inertial>
-  <visual>
-    <origin rpy="0 0 0" xyz="-0.303937 0.534941 -0.652587"/>
-    <geometry>
-      <mesh filename="package://panel_base_description/meshes/Power_Switch_v1__5__1.stl" scale="0.001 0.001 0.001"/>
-    </geometry>
-    <material name="silver"/>
-  </visual>
-  <collision>
-    <origin rpy="0 0 0" xyz="-0.303937 0.534941 -0.652587"/>
-    <geometry>
-      <mesh filename="package://panel_base_description/meshes/Power_Switch_v1__5__1.stl" scale="0.001 0.001 0.001"/>
-    </geometry>
-  </collision>
-</link>
+  <link name="Power_Switch_v1__5__1">
+    <inertial>
+      <origin rpy="0 0 0" xyz="0.0002972705555878141 -0.006958102859998427 -4.471703652586534e-06"/>
+      <mass value="0.024410578629013545"/>
+      <inertia ixx="1e-06" ixy="0.0" ixz="-0.0" iyy="1e-06" iyz="0.0" izz="1e-06"/>
+    </inertial>
+    <visual>
+      <origin rpy="0 0 0" xyz="-0.303937 0.534941 -0.652587"/>
+      <geometry>
+        <mesh filename="package://panel_base_description/meshes/Power_Switch_v1__5__1.stl" scale="0.001 0.001 0.001"/>
+      </geometry>
+      <material name="silver"/>
+    </visual>
+    <collision>
+      <origin rpy="0 0 0" xyz="-0.303937 0.534941 -0.652587"/>
+      <geometry>
+        <mesh filename="package://panel_base_description/meshes/Power_Switch_v1__5__1.stl" scale="0.001 0.001 0.001"/>
+      </geometry>
+    </collision>
+  </link>
 
-<link name="Push_Button_Miyama_DS_412_ROT_v1__4__1">
-  <inertial>
-    <origin rpy="0 0 0" xyz="2.563228293100961e-05 -0.009416553271510475 -3.0324005425685918e-05"/>
-    <mass value="0.0036732888359473866"/>
-    <inertia ixx="0.0" ixy="0.0" ixz="-0.0" iyy="0.0" iyz="-0.0" izz="0.0"/>
-  </inertial>
-  <visual>
-    <origin rpy="0 0 0" xyz="0.165768 0.529941 -0.694773"/>
-    <geometry>
-      <mesh filename="package://panel_base_description/meshes/Push_Button_Miyama_DS_412_ROT_v1__4__1.stl" scale="0.001 0.001 0.001"/>
-    </geometry>
-    <material name="silver"/>
-  </visual>
-  <collision>
-    <origin rpy="0 0 0" xyz="0.165768 0.529941 -0.694773"/>
-    <geometry>
-      <mesh filename="package://panel_base_description/meshes/Push_Button_Miyama_DS_412_ROT_v1__4__1.stl" scale="0.001 0.001 0.001"/>
-    </geometry>
-  </collision>
-</link>
+  <link name="Push_Button_Miyama_DS_412_ROT_v1__4__1">
+    <inertial>
+      <origin rpy="0 0 0" xyz="2.563228293100961e-05 -0.009416553271510475 -3.0324005425685918e-05"/>
+      <mass value="0.0036732888359473866"/>
+      <inertia ixx="0.0" ixy="0.0" ixz="-0.0" iyy="0.0" iyz="-0.0" izz="0.0"/>
+    </inertial>
+    <visual>
+      <origin rpy="0 0 0" xyz="0.165768 0.529941 -0.694773"/>
+      <geometry>
+        <mesh filename="package://panel_base_description/meshes/Push_Button_Miyama_DS_412_ROT_v1__4__1.stl" scale="0.001 0.001 0.001"/>
+      </geometry>
+      <material name="silver"/>
+    </visual>
+    <collision>
+      <origin rpy="0 0 0" xyz="0.165768 0.529941 -0.694773"/>
+      <geometry>
+        <mesh filename="package://panel_base_description/meshes/Push_Button_Miyama_DS_412_ROT_v1__4__1.stl" scale="0.001 0.001 0.001"/>
+      </geometry>
+    </collision>
+  </link>
 
-<link name="Push_Button_Miyama_DS_412_ROT_v1__3__1">
-  <inertial>
-    <origin rpy="0 0 0" xyz="2.5632282931148387e-05 -0.009416553271510475 -3.0324005425019784e-05"/>
-    <mass value="0.0036732888359473866"/>
-    <inertia ixx="0.0" ixy="0.0" ixz="-0.0" iyy="0.0" iyz="-0.0" izz="0.0"/>
-  </inertial>
-  <visual>
-    <origin rpy="0 0 0" xyz="0.138818 0.529941 -0.694773"/>
-    <geometry>
-      <mesh filename="package://panel_base_description/meshes/Push_Button_Miyama_DS_412_ROT_v1__3__1.stl" scale="0.001 0.001 0.001"/>
-    </geometry>
-    <material name="silver"/>
-  </visual>
-  <collision>
-    <origin rpy="0 0 0" xyz="0.138818 0.529941 -0.694773"/>
-    <geometry>
-      <mesh filename="package://panel_base_description/meshes/Push_Button_Miyama_DS_412_ROT_v1__3__1.stl" scale="0.001 0.001 0.001"/>
-    </geometry>
-  </collision>
-</link>
+  <link name="Push_Button_Miyama_DS_412_ROT_v1__3__1">
+    <inertial>
+      <origin rpy="0 0 0" xyz="2.5632282931148387e-05 -0.009416553271510475 -3.0324005425019784e-05"/>
+      <mass value="0.0036732888359473866"/>
+      <inertia ixx="0.0" ixy="0.0" ixz="-0.0" iyy="0.0" iyz="-0.0" izz="0.0"/>
+    </inertial>
+    <visual>
+      <origin rpy="0 0 0" xyz="0.138818 0.529941 -0.694773"/>
+      <geometry>
+        <mesh filename="package://panel_base_description/meshes/Push_Button_Miyama_DS_412_ROT_v1__3__1.stl" scale="0.001 0.001 0.001"/>
+      </geometry>
+      <material name="silver"/>
+    </visual>
+    <collision>
+      <origin rpy="0 0 0" xyz="0.138818 0.529941 -0.694773"/>
+      <geometry>
+        <mesh filename="package://panel_base_description/meshes/Push_Button_Miyama_DS_412_ROT_v1__3__1.stl" scale="0.001 0.001 0.001"/>
+      </geometry>
+    </collision>
+  </link>
 
-<link name="Push_Button_Miyama_DS_412_ROT_v1_1">
-  <inertial>
-    <origin rpy="0 0 0" xyz="2.563228293094022e-05 -0.009416553271510475 -3.0324005425019784e-05"/>
-    <mass value="0.0036732888359473866"/>
-    <inertia ixx="0.0" ixy="0.0" ixz="-0.0" iyy="0.0" iyz="-0.0" izz="0.0"/>
-  </inertial>
-  <visual>
-    <origin rpy="0 0 0" xyz="0.111868 0.529941 -0.694773"/>
-    <geometry>
-      <mesh filename="package://panel_base_description/meshes/Push_Button_Miyama_DS_412_ROT_v1_1.stl" scale="0.001 0.001 0.001"/>
-    </geometry>
-    <material name="silver"/>
-  </visual>
-  <collision>
-    <origin rpy="0 0 0" xyz="0.111868 0.529941 -0.694773"/>
-    <geometry>
-      <mesh filename="package://panel_base_description/meshes/Push_Button_Miyama_DS_412_ROT_v1_1.stl" scale="0.001 0.001 0.001"/>
-    </geometry>
-  </collision>
-</link>
+  <link name="Push_Button_Miyama_DS_412_ROT_v1_1">
+    <inertial>
+      <origin rpy="0 0 0" xyz="2.563228293094022e-05 -0.009416553271510475 -3.0324005425019784e-05"/>
+      <mass value="0.0036732888359473866"/>
+      <inertia ixx="0.0" ixy="0.0" ixz="-0.0" iyy="0.0" iyz="-0.0" izz="0.0"/>
+    </inertial>
+    <visual>
+      <origin rpy="0 0 0" xyz="0.111868 0.529941 -0.694773"/>
+      <geometry>
+        <mesh filename="package://panel_base_description/meshes/Push_Button_Miyama_DS_412_ROT_v1_1.stl" scale="0.001 0.001 0.001"/>
+      </geometry>
+      <material name="silver"/>
+    </visual>
+    <collision>
+      <origin rpy="0 0 0" xyz="0.111868 0.529941 -0.694773"/>
+      <geometry>
+        <mesh filename="package://panel_base_description/meshes/Push_Button_Miyama_DS_412_ROT_v1_1.stl" scale="0.001 0.001 0.001"/>
+      </geometry>
+    </collision>
+  </link>
 
-<link name="Push_Button_Miyama_DS_412_ROT_v1__5__1">
-  <inertial>
-    <origin rpy="0 0 0" xyz="2.6316054443531467e-05 -0.009416553271510475 -3.0324005425907963e-05"/>
-    <mass value="0.0036732888359473866"/>
-    <inertia ixx="0.0" ixy="0.0" ixz="-0.0" iyy="0.0" iyz="-0.0" izz="0.0"/>
-  </inertial>
-  <visual>
-    <origin rpy="0 0 0" xyz="-0.231868 0.529941 -0.694773"/>
-    <geometry>
-      <mesh filename="package://panel_base_description/meshes/Push_Button_Miyama_DS_412_ROT_v1__5__1.stl" scale="0.001 0.001 0.001"/>
-    </geometry>
-    <material name="silver"/>
-  </visual>
-  <collision>
-    <origin rpy="0 0 0" xyz="-0.231868 0.529941 -0.694773"/>
-    <geometry>
-      <mesh filename="package://panel_base_description/meshes/Push_Button_Miyama_DS_412_ROT_v1__5__1.stl" scale="0.001 0.001 0.001"/>
-    </geometry>
-  </collision>
-</link>
+  <link name="Push_Button_Miyama_DS_412_ROT_v1__5__1">
+    <inertial>
+      <origin rpy="0 0 0" xyz="2.6316054443531467e-05 -0.009416553271510475 -3.0324005425907963e-05"/>
+      <mass value="0.0036732888359473866"/>
+      <inertia ixx="0.0" ixy="0.0" ixz="-0.0" iyy="0.0" iyz="-0.0" izz="0.0"/>
+    </inertial>
+    <visual>
+      <origin rpy="0 0 0" xyz="-0.231868 0.529941 -0.694773"/>
+      <geometry>
+        <mesh filename="package://panel_base_description/meshes/Push_Button_Miyama_DS_412_ROT_v1__5__1.stl" scale="0.001 0.001 0.001"/>
+      </geometry>
+      <material name="silver"/>
+    </visual>
+    <collision>
+      <origin rpy="0 0 0" xyz="-0.231868 0.529941 -0.694773"/>
+      <geometry>
+        <mesh filename="package://panel_base_description/meshes/Push_Button_Miyama_DS_412_ROT_v1__5__1.stl" scale="0.001 0.001 0.001"/>
+      </geometry>
+    </collision>
+  </link>
 
-<link name="Push_Button_Miyama_DS_412_ROT_v1__2__1">
-  <inertial>
-    <origin rpy="0 0 0" xyz="2.631605444364249e-05 -0.009416553271510475 -3.0324005425019784e-05"/>
-    <mass value="0.0036732888359473866"/>
-    <inertia ixx="0.0" ixy="0.0" ixz="-0.0" iyy="0.0" iyz="-0.0" izz="0.0"/>
-  </inertial>
-  <visual>
-    <origin rpy="0 0 0" xyz="-0.258818 0.529941 -0.694773"/>
-    <geometry>
-      <mesh filename="package://panel_base_description/meshes/Push_Button_Miyama_DS_412_ROT_v1__2__1.stl" scale="0.001 0.001 0.001"/>
-    </geometry>
-    <material name="silver"/>
-  </visual>
-  <collision>
-    <origin rpy="0 0 0" xyz="-0.258818 0.529941 -0.694773"/>
-    <geometry>
-      <mesh filename="package://panel_base_description/meshes/Push_Button_Miyama_DS_412_ROT_v1__2__1.stl" scale="0.001 0.001 0.001"/>
-    </geometry>
-  </collision>
-</link>
+  <link name="Push_Button_Miyama_DS_412_ROT_v1__2__1">
+    <inertial>
+      <origin rpy="0 0 0" xyz="2.631605444364249e-05 -0.009416553271510475 -3.0324005425019784e-05"/>
+      <mass value="0.0036732888359473866"/>
+      <inertia ixx="0.0" ixy="0.0" ixz="-0.0" iyy="0.0" iyz="-0.0" izz="0.0"/>
+    </inertial>
+    <visual>
+      <origin rpy="0 0 0" xyz="-0.258818 0.529941 -0.694773"/>
+      <geometry>
+        <mesh filename="package://panel_base_description/meshes/Push_Button_Miyama_DS_412_ROT_v1__2__1.stl" scale="0.001 0.001 0.001"/>
+      </geometry>
+      <material name="silver"/>
+    </visual>
+    <collision>
+      <origin rpy="0 0 0" xyz="-0.258818 0.529941 -0.694773"/>
+      <geometry>
+        <mesh filename="package://panel_base_description/meshes/Push_Button_Miyama_DS_412_ROT_v1__2__1.stl" scale="0.001 0.001 0.001"/>
+      </geometry>
+    </collision>
+  </link>
 
-<link name="Push_Button_Miyama_DS_412_ROT_v1__1__1">
-  <inertial>
-    <origin rpy="0 0 0" xyz="2.6316054443864534e-05 -0.009416553271510475 -3.032400542535285e-05"/>
-    <mass value="0.0036732888359473866"/>
-    <inertia ixx="0.0" ixy="0.0" ixz="-0.0" iyy="0.0" iyz="-0.0" izz="0.0"/>
-  </inertial>
-  <visual>
-    <origin rpy="0 0 0" xyz="-0.285768 0.529941 -0.694773"/>
-    <geometry>
-      <mesh filename="package://panel_base_description/meshes/Push_Button_Miyama_DS_412_ROT_v1__1__1.stl" scale="0.001 0.001 0.001"/>
-    </geometry>
-    <material name="silver"/>
-  </visual>
-  <collision>
-    <origin rpy="0 0 0" xyz="-0.285768 0.529941 -0.694773"/>
-    <geometry>
-      <mesh filename="package://panel_base_description/meshes/Push_Button_Miyama_DS_412_ROT_v1__1__1.stl" scale="0.001 0.001 0.001"/>
-    </geometry>
-  </collision>
-</link>
+  <link name="Push_Button_Miyama_DS_412_ROT_v1__1__1">
+    <inertial>
+      <origin rpy="0 0 0" xyz="2.6316054443864534e-05 -0.009416553271510475 -3.032400542535285e-05"/>
+      <mass value="0.0036732888359473866"/>
+      <inertia ixx="0.0" ixy="0.0" ixz="-0.0" iyy="0.0" iyz="-0.0" izz="0.0"/>
+    </inertial>
+    <visual>
+      <origin rpy="0 0 0" xyz="-0.285768 0.529941 -0.694773"/>
+      <geometry>
+        <mesh filename="package://panel_base_description/meshes/Push_Button_Miyama_DS_412_ROT_v1__1__1.stl" scale="0.001 0.001 0.001"/>
+      </geometry>
+      <material name="silver"/>
+    </visual>
+    <collision>
+      <origin rpy="0 0 0" xyz="-0.285768 0.529941 -0.694773"/>
+      <geometry>
+        <mesh filename="package://panel_base_description/meshes/Push_Button_Miyama_DS_412_ROT_v1__1__1.stl" scale="0.001 0.001 0.001"/>
+      </geometry>
+    </collision>
+  </link>
 
-<joint name="Slider26" type="prismatic">
-  <origin rpy="0 0 0" xyz="-0.08109 0.099434 0.394773"/>
-  <parent link="base_link"/>
-  <child link="LID_v2_1"/>
-  <axis xyz="-0.866025 0.5 0.0"/>
-  <limit effort="1000" lower="0.0" upper="100.0" velocity="100"/>
-</joint>
+  <joint name="Slider26" type="prismatic">
+    <origin rpy="0 0 0" xyz="-0.08109 0.099434 0.394773"/>
+    <parent link="base_link"/>
+    <child link="LID_v2_1"/>
+    <axis xyz="-0.866025 0.5 0.0"/>
+    <limit effort="1000" lower="0.0" upper="100.0" velocity="100"/>
+  </joint>
 
-<joint name="Slider27" type="prismatic">
-  <origin rpy="0 0 0" xyz="0.244391 0.124434 0.519773"/>
-  <parent link="base_link"/>
-  <child link="weight_v2_1"/>
-  <axis xyz="0.866025 0.5 0.0"/>
-  <limit effort="1000" lower="0.0" upper="100.0" velocity="100"/>
-</joint>
+  <joint name="Slider27" type="prismatic">
+    <origin rpy="0 0 0" xyz="0.244391 0.124434 0.519773"/>
+    <parent link="base_link"/>
+    <child link="weight_v2_1"/>
+    <axis xyz="0.866025 0.5 0.0"/>
+    <limit effort="1000" lower="0.0" upper="100.0" velocity="100"/>
+  </joint>
 
-<joint name="Rigid28" type="fixed">
-  <origin rpy="0 0 0" xyz="0.06 0.550892 0.384773"/>
-  <parent link="base_link"/>
-  <child link="base_feet_v4_1"/>
-</joint>
+  <joint name="Rigid28" type="fixed">
+    <origin rpy="0 0 0" xyz="0.06 0.550892 0.384773"/>
+    <parent link="base_link"/>
+    <child link="base_feet_v4_1"/>
+  </joint>
 
-<joint name="Rigid29" type="fixed">
-  <origin rpy="0 0 0" xyz="0.521519 -0.248482 0.384773"/>
-  <parent link="base_link"/>
-  <child link="base_feet_v4__2__1"/>
-</joint>
+  <joint name="Rigid29" type="fixed">
+    <origin rpy="0 0 0" xyz="0.521519 -0.248482 0.384773"/>
+    <parent link="base_link"/>
+    <child link="base_feet_v4__2__1"/>
+  </joint>
 
-<joint name="Rigid30" type="fixed">
-  <origin rpy="0 0 0" xyz="-0.401519 -0.248482 0.384773"/>
-  <parent link="base_link"/>
-  <child link="base_feet_v4__1__1"/>
-</joint>
+  <joint name="Rigid30" type="fixed">
+    <origin rpy="0 0 0" xyz="-0.401519 -0.248482 0.384773"/>
+    <parent link="base_link"/>
+    <child link="base_feet_v4__1__1"/>
+  </joint>
 
-<joint name="Rigid31" type="fixed">
-  <origin rpy="0 0 0" xyz="0.06 0.017976 1.244773"/>
-  <parent link="base_link"/>
-  <child link="Hat_v3_1"/>
-</joint>
+  <joint name="Rigid31" type="fixed">
+    <origin rpy="0 0 0" xyz="0.06 0.017976 1.244773"/>
+    <parent link="base_link"/>
+    <child link="Hat_v3_1"/>
+  </joint>
 
-<joint name="Rigid32" type="fixed">
-  <origin rpy="0 0 0" xyz="0.06 -0.444941 0.344773"/>
-  <parent link="base_link"/>
-  <child link="keybord_v6_v1_1"/>
-</joint>
+  <joint name="Rigid32" type="fixed">
+    <origin rpy="0 0 0" xyz="0.06 -0.444941 0.344773"/>
+    <parent link="base_link"/>
+    <child link="keybord_v6_v1_1"/>
+  </joint>
 
-<joint name="Rev33" type="revolute">
-  <origin rpy="0 0 0" xyz="-0.075 -0.547441 0.394773"/>
-  <parent link="base_link"/>
-  <child link="Kapak_1_v15_1"/>
-  <axis xyz="0.0 0.0 -1.0"/>
-  <limit effort="1000" lower="0.0" upper="1.570796" velocity="100"/>
-</joint>
+  <joint name="Rev33" type="revolute">
+    <origin rpy="0 0 0" xyz="-0.075 -0.547441 0.394773"/>
+    <parent link="base_link"/>
+    <child link="Kapak_1_v15_1"/>
+    <axis xyz="0.0 0.0 -1.0"/>
+    <limit effort="1000" lower="0.0" upper="1.570796" velocity="100"/>
+  </joint>
 
-<joint name="Rigid34" type="fixed">
-  <origin rpy="0 0 0" xyz="-0.183937 -0.534941 0.652587"/>
-  <parent link="base_link"/>
-  <child link="Power_Switch_v1__4__1"/>
-</joint>
+  <joint name="Rigid34" type="fixed">
+    <origin rpy="0 0 0" xyz="-0.183937 -0.534941 0.652587"/>
+    <parent link="base_link"/>
+    <child link="Power_Switch_v1__4__1"/>
+  </joint>
 
-<joint name="Rigid35" type="fixed">
-  <origin rpy="0 0 0" xyz="-0.1476 -0.534941 0.652587"/>
-  <parent link="base_link"/>
-  <child link="Power_Switch_v1__1__1"/>
-</joint>
+  <joint name="Rigid35" type="fixed">
+    <origin rpy="0 0 0" xyz="-0.1476 -0.534941 0.652587"/>
+    <parent link="base_link"/>
+    <child link="Power_Switch_v1__1__1"/>
+  </joint>
 
-<joint name="Rigid36" type="fixed">
-  <origin rpy="0 0 0" xyz="-0.111313 -0.534941 0.652637"/>
-  <parent link="base_link"/>
-  <child link="Power_Switch_v1_1"/>
-</joint>
+  <joint name="Rigid36" type="fixed">
+    <origin rpy="0 0 0" xyz="-0.111313 -0.534941 0.652637"/>
+    <parent link="base_link"/>
+    <child link="Power_Switch_v1_1"/>
+  </joint>
 
-<joint name="Rigid37" type="fixed">
-  <origin rpy="0 0 0" xyz="0.231313 -0.534941 0.652637"/>
-  <parent link="base_link"/>
-  <child link="Power_Switch_v1__2__1"/>
-</joint>
+  <joint name="Rigid37" type="fixed">
+    <origin rpy="0 0 0" xyz="0.231313 -0.534941 0.652637"/>
+    <parent link="base_link"/>
+    <child link="Power_Switch_v1__2__1"/>
+  </joint>
 
-<joint name="Rigid38" type="fixed">
-  <origin rpy="0 0 0" xyz="0.2676 -0.534941 0.652587"/>
-  <parent link="base_link"/>
-  <child link="Power_Switch_v1__3__1"/>
-</joint>
+  <joint name="Rigid38" type="fixed">
+    <origin rpy="0 0 0" xyz="0.2676 -0.534941 0.652587"/>
+    <parent link="base_link"/>
+    <child link="Power_Switch_v1__3__1"/>
+  </joint>
 
-<joint name="Rigid39" type="fixed">
-  <origin rpy="0 0 0" xyz="0.303937 -0.534941 0.652587"/>
-  <parent link="base_link"/>
-  <child link="Power_Switch_v1__5__1"/>
-</joint>
+  <joint name="Rigid39" type="fixed">
+    <origin rpy="0 0 0" xyz="0.303937 -0.534941 0.652587"/>
+    <parent link="base_link"/>
+    <child link="Power_Switch_v1__5__1"/>
+  </joint>
 
-<joint name="Rigid40" type="fixed">
-  <origin rpy="0 0 0" xyz="-0.165768 -0.529941 0.694773"/>
-  <parent link="base_link"/>
-  <child link="Push_Button_Miyama_DS_412_ROT_v1__4__1"/>
-</joint>
+  <joint name="Rigid40" type="fixed">
+    <origin rpy="0 0 0" xyz="-0.165768 -0.529941 0.694773"/>
+    <parent link="base_link"/>
+    <child link="Push_Button_Miyama_DS_412_ROT_v1__4__1"/>
+  </joint>
 
-<joint name="Rigid41" type="fixed">
-  <origin rpy="0 0 0" xyz="-0.138818 -0.529941 0.694773"/>
-  <parent link="base_link"/>
-  <child link="Push_Button_Miyama_DS_412_ROT_v1__3__1"/>
-</joint>
+  <joint name="Rigid41" type="fixed">
+    <origin rpy="0 0 0" xyz="-0.138818 -0.529941 0.694773"/>
+    <parent link="base_link"/>
+    <child link="Push_Button_Miyama_DS_412_ROT_v1__3__1"/>
+  </joint>
 
-<joint name="Rigid42" type="fixed">
-  <origin rpy="0 0 0" xyz="-0.111868 -0.529941 0.694773"/>
-  <parent link="base_link"/>
-  <child link="Push_Button_Miyama_DS_412_ROT_v1_1"/>
-</joint>
+  <joint name="Rigid42" type="fixed">
+    <origin rpy="0 0 0" xyz="-0.111868 -0.529941 0.694773"/>
+    <parent link="base_link"/>
+    <child link="Push_Button_Miyama_DS_412_ROT_v1_1"/>
+  </joint>
 
-<joint name="Rigid43" type="fixed">
-  <origin rpy="0 0 0" xyz="0.231868 -0.529941 0.694773"/>
-  <parent link="base_link"/>
-  <child link="Push_Button_Miyama_DS_412_ROT_v1__5__1"/>
-</joint>
+  <joint name="Rigid43" type="fixed">
+    <origin rpy="0 0 0" xyz="0.231868 -0.529941 0.694773"/>
+    <parent link="base_link"/>
+    <child link="Push_Button_Miyama_DS_412_ROT_v1__5__1"/>
+  </joint>
 
-<joint name="Rigid44" type="fixed">
-  <origin rpy="0 0 0" xyz="0.258818 -0.529941 0.694773"/>
-  <parent link="base_link"/>
-  <child link="Push_Button_Miyama_DS_412_ROT_v1__2__1"/>
-</joint>
+  <joint name="Rigid44" type="fixed">
+    <origin rpy="0 0 0" xyz="0.258818 -0.529941 0.694773"/>
+    <parent link="base_link"/>
+    <child link="Push_Button_Miyama_DS_412_ROT_v1__2__1"/>
+  </joint>
 
-<joint name="Rigid45" type="fixed">
-  <origin rpy="0 0 0" xyz="0.285768 -0.529941 0.694773"/>
-  <parent link="base_link"/>
-  <child link="Push_Button_Miyama_DS_412_ROT_v1__1__1"/>
-</joint>
+  <joint name="Rigid45" type="fixed">
+    <origin rpy="0 0 0" xyz="0.285768 -0.529941 0.694773"/>
+    <parent link="base_link"/>
+    <child link="Push_Button_Miyama_DS_412_ROT_v1__1__1"/>
+  </joint>
 
 </robot>
