@@ -9,6 +9,9 @@ from std_msgs.msg import String
 import math
 from std_msgs.msg import Float64MultiArray
 
+"""
+@author: Baran Berk Bağcı
+"""
 #new_massage = False
 
 #max_reach = 74.6831

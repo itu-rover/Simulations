@@ -1,7 +1,8 @@
 <launch>
-
+<!-- 
+@author: Baran Berk Bağcı-->
     <arg name="gui" default="True" />
     <param name="use_gui" value="$(arg gui)" />
-    <node name="rviz" pkg="rviz" type="rviz" args="-d $(find rover_21_description_velodyne)/rviz/urdf.rviz" required="true" />
+    <node name="rviz" pkg="rviz" type="rviz" args="-d $(find rover_21_description_velodyne)/rviz/urdf.rviz" required="true" /> <!-- Open rviz with urdf.rviz configuration you can change this configuration by change urdf.rviz file or save new rviz configuration save as urdf.rviz-->
     
 </launch>

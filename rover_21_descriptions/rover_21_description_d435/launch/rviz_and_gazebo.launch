@@ -1,6 +1,10 @@
 <launch>
 
-<include file="$(find rover_21_description_d435)/launch/gazebo.launch"/>
-<include file="$(find rover_21_description_d435)/launch/d435_rviz.launch"/>
+<!-- 
+@author: Baran Berk Bağcı-->
+
+    <!-- Launch both rviz and gazebo-->
+    <include file="$(find rover_21_description_d435)/launch/gazebo.launch"/>
+    <include file="$(find rover_21_description_d435)/launch/d435_rviz.launch"/>
 
 </launch>

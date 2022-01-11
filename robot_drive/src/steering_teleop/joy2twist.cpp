@@ -6,6 +6,12 @@
 #include <iostream>
 #include <signal.h>
 
+/*
+@author: İsmail Eyüphan Ünver
+@author: Baran Berk Bağcı
+*/
+
+/* This sript written by Han, i just made small changes like ros_info_stream and arm_mode subscriber. */
 using namespace std;
 
 bool arm_mode = true;
@@ -29,7 +35,7 @@ void joy_cb(const sensor_msgs::Joy::ConstPtr& msg){
   //joy2twist(msg);
 }
 
-void arm_mode_checker(const std_msgs::Float64::ConstPtr& msg)
+void arm_mode_checker(const std_msgs::Float64::ConstPtr& msg) //callback function check /arm_mode topic data 
 {
   if (msg->data == 1)
   {

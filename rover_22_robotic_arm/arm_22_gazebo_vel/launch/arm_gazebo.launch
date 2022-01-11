@@ -12,10 +12,12 @@
         <arg name="paused" value="true" />
     </include> -->
 
+    <!-- Send urdf to parameter server-->
     <param name="robot_description" command="xacro --inorder $(find arm_22_gazebo_vel)/urdf/assembly.urdf.xacro" />
 
-
+    <!-- Spawn urdf model from server-->
     <node name="spawn_model" pkg="gazebo_ros" type="spawn_model" args="-urdf -param robot_description -model arm_22_gazebo_vel" output="screen" />
+    
     <!-- robot state publisher-->
     <node name="robot_state_publisher" pkg="robot_state_publisher" type="robot_state_publisher" />
 

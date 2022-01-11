@@ -155,6 +155,7 @@
     <selfCollide>true</selfCollide>
   </gazebo>
 
+  <!-- Coloring for panel links -->
   <gazebo reference="base_link">
     <material>Gazebo/Grey</material>
   </gazebo>

@@ -10,10 +10,19 @@
 #include <iomanip>
 #include "definitions.hpp"
 
+/*
+@author: Baran Berk Bağcı
+@author: İsmail Eyüphan Ünver
+*/
+
+/* 
+I made some modifications Han's steering_v2.cpp script. 
+*/
+
 using namespace std;
 
 
-void joy_cb(const sensor_msgs::Joy::ConstPtr& msg){
+void joy_cb(const sensor_msgs::Joy::ConstPtr& msg){ //joystick callback to check mode switch key pressed.
     joy_msg.set_buttons(msg->buttons[0],msg->buttons[1],msg->buttons[2],msg->buttons[3],msg->buttons[4],msg->buttons[5],msg->buttons[6],msg->buttons[7],msg->buttons[8],msg->buttons[9],msg->buttons[10],msg->buttons[11]);
 }
 
@@ -27,8 +36,8 @@ int main(int argc, char *argv[])
     ros::Publisher arm_mode_pub = nh.advertise<std_msgs::Float64>("/arm_mode",10);
     while (ros::ok())
     {
-        ros::spinOnce();
-        if ((joy_msg.get_button(7) == 1) && !(first_stage))
+        ros::spinOnce(); // this method used for single round callback if you have your own loop this method is usefull.
+        if ((joy_msg.get_button(7) == 1) && !(first_stage)) // mode switch algorithm if block 7 button in DS4 is R2 button.
         {
             first_stage = true;
         }
@@ -48,7 +57,7 @@ int main(int argc, char *argv[])
             
         }
         
-        if (!(second_stage))
+        if (!(second_stage)) // first stage is robot arm control.
         {
             while (ros::ok() && !(second_stage))
             {
@@ -62,7 +71,7 @@ int main(int argc, char *argv[])
             
         }
         
-        else
+        else // second stage is steering control.
         {
             while (ros::ok() && second_stage)
             {
