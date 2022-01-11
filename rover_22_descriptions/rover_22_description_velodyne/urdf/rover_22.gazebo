@@ -3,6 +3,7 @@
 
 <xacro:property name="body_color" value="Gazebo/Silver" />
 
+  <!-- Plugin for controllers-->
 <gazebo>
   <plugin filename="libgazebo_ros_control.so" name="control"/>
 </gazebo>

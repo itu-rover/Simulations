@@ -259,6 +259,7 @@
     <child link="velodyne" />
   </joint>
 
+  <!-- Camera link and joint which is on the velodyne-->
   <link name="camera">
     <collision>
       <origin xyz="0 0 0" rpy="0 0 0" />

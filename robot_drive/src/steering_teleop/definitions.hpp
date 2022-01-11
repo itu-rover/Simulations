@@ -10,11 +10,20 @@
 #include <cmath>
 #include <iomanip>
 
+/*
+@author: Baran Berk Bağcı
+@author: İsmail Eyüphan Ünver
+*/
 
-bool first_stage = false;
+/* 
+I made some modifications Han's steering_v2.cpp code this header file written by me however steering class
+written by Han.
+*/
+
+bool first_stage = false; // This and second_stage variable is used for mode switch algorithm.
 bool second_stage = false;
 
-void SigintHandler(int sig)
+void SigintHandler(int sig) // Han signalHandler function
 {
   // Do some custom action.
   // For example, publish a stop message to some other nodes.
@@ -23,7 +32,7 @@ void SigintHandler(int sig)
   ros::shutdown();
 }
 
-class joy_message{
+class joy_message{ // My Joy class used for gec axis and button value
 
     double axes[8];
     double buttons[12];
@@ -82,7 +91,7 @@ double joy_message::get_button(int button_index){
 
 joy_message joy_msg;
 
-class RobotArm
+class RobotArm // Robot arm class used for drive arm in forward kinematics.
 {
 private:
 	ros::Publisher arm_publisher;
@@ -98,16 +107,16 @@ private:
 
 public:
 	RobotArm(ros::NodeHandle *nh){
-		arm_publisher = nh->advertise<trajectory_msgs::JointTrajectory>("rover_arm_controller/command",10);
+		arm_publisher = nh->advertise<trajectory_msgs::JointTrajectory>("/rover_arm_controller/command",10); // arm publisher
 		ros::Rate rate(150);
-		right_finger_publisher = nh->advertise<std_msgs::Float64>("rover_arm_right_finger/command",10);
-		left_finger_publisher = nh->advertise<std_msgs::Float64>("/rover_arm_left_finger/command",10);
+		right_finger_publisher = nh->advertise<std_msgs::Float64>("/rover_arm_right_finger/command",10); // right finger gripper publisher
+		left_finger_publisher = nh->advertise<std_msgs::Float64>("/rover_arm_left_finger/command",10); // left finger gripper publisher
 		arm_joy = nh->subscribe("/joy", 10, &RobotArm::arm_joy_cb,this);
 
 		
-		while (ros::ok && !(second_stage))
+		while (ros::ok && !(second_stage)) // while loop for mode switch algorithm
         {
-				if ((joy_msg.get_button(7) == 1) && !(first_stage))
+				if ((joy_msg.get_button(7) == 1) && !(first_stage)) // mode switch if block
                 {
                     first_stage = true;
                 }
@@ -128,7 +137,7 @@ public:
                 }
             //std::cout<<"arm"<<std::endl;            
             ros::spinOnce();
-            arm_joints();
+            arm_joints(); // main arm drive function
             rate.sleep();
             signal(1, SigintHandler);
             
@@ -139,7 +148,7 @@ public:
 	// 	joy_msg.set_buttons(msg->buttons[0],msg->buttons[1],msg->buttons[2],msg->buttons[3],msg->buttons[4],msg->buttons[5],msg->buttons[6],msg->buttons[7],msg->buttons[8],msg->buttons[9],msg->buttons[10],msg->buttons[11]);
     //     //cout << joy_msg.get_button(7)<<endl;
 	// }
-	void arm_joy_cb(const sensor_msgs::Joy::ConstPtr& msg)
+	void arm_joy_cb(const sensor_msgs::Joy::ConstPtr& msg) // joystck callback for robot arm
 	{
 		joy_msg.set_axes(msg->axes[0],msg->axes[1],msg->axes[2],msg->axes[3],msg->axes[4],msg->axes[5], msg->axes[6], msg->axes[7]);
 		joy_msg.set_buttons(msg->buttons[0],msg->buttons[1],msg->buttons[2],msg->buttons[3],msg->buttons[4],msg->buttons[5],msg->buttons[6],msg->buttons[7],msg->buttons[8],msg->buttons[9],msg->buttons[10],msg->buttons[11]);
@@ -147,10 +156,12 @@ public:
 	}
 	void arm_joints()
 	{	
-		trajectory_msgs::JointTrajectory arm_msg;
-		trajectory_msgs::JointTrajectoryPoint arm_point;
-		arm_msg.joint_names = {"axis_1", "axis_2", "axis_3", "axis_4", "axis_5", "axis_6"};
-		arm_delta_theta[0] = joy_msg.get_axis(0) * 0.03;
+		trajectory_msgs::JointTrajectory arm_msg; // published data to /rover_arm_controller/command topic
+		trajectory_msgs::JointTrajectoryPoint arm_point; // attribute of JointTrajectory class it is another class
+		arm_msg.joint_names = {"axis_1", "axis_2", "axis_3", "axis_4", "axis_5", "axis_6"}; // joint name for joint trajectory controller.
+		
+        /* Get all delta theate angle from joystic. */
+        arm_delta_theta[0] = joy_msg.get_axis(0) * 0.03;
     	arm_delta_theta[1] = joy_msg.get_axis(1) * 0.03;
    	 	arm_delta_theta[2] = joy_msg.get_axis(4) * 0.04;
     	arm_delta_theta[3] = -joy_msg.get_axis(3) * 0.03;
@@ -162,20 +173,20 @@ public:
 
 		for (int i = 0; i < 6; i++)
 		{
-			arm[i] += arm_delta_theta[i];
+			arm[i] += arm_delta_theta[i]; /* sum all delta theta to joint angle*/
 		}
 		
 		
 
 		gripper[0] += gripper_delta_theta[0];
         gripper[1] += gripper_delta_theta[1];
-		for(double& c: arm) arm_point.positions.push_back(c);
+		for(double& c: arm) arm_point.positions.push_back(c); /* push point positions to attribute */
 		arm_point.time_from_start =ros::Duration(0.005); 
-        arm_msg.points.push_back(arm_point);
+        arm_msg.points.push_back(arm_point); /* points pushed to msg data */
 		
 		ROS_INFO_STREAM(arm_msg);
         
-		arm_publisher.publish(arm_msg);
+		arm_publisher.publish(arm_msg); /* msg data published */
 		std_msgs::Float64 gripper_pub[2];
 		gripper_pub[0].data = gripper[0];
 		gripper_pub[1].data = gripper[1];

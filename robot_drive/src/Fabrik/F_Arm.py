@@ -6,6 +6,9 @@ import math
 import rospy 
 from std_msgs.msg import Float64 as F64
 
+"""
+@author: Baran Berk Bağcı
+"""
 #global TOLERANCE
 
 #TOLERANCE = 0.001

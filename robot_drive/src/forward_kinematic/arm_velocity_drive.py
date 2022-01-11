@@ -8,8 +8,11 @@ from sensor_msgs.msg import Joy
 import signal
 import sys
 
+"""
+@author: Baran Berk Bağcı
+"""
 
-
+"""This class basicly allow us to drive with forward kinematic drive with velocity controller."""
 class Arm(object):
     
     def __init__(self):
@@ -19,7 +22,7 @@ class Arm(object):
         self.gripper_delta_thetas = [0.0, 0.0]
         self.gripper_angles = [0.0, 0.0]
         
-        self.arm_publisher = rospy.Publisher('/rover_arm_controller/command', F64M, queue_size=10)
+        self.arm_publisher = rospy.Publisher('/rover_arm_controller/command', F64M, queue_size=10) #Velocity group controller.
         self.right_finger_publisher = rospy.Publisher('/rover_arm_right_finger/command', F64, queue_size=10) # Right finger controller
         self.left_finger_publisher = rospy.Publisher('/rover_arm_left_finger/command', F64, queue_size=10) # Left finger kontroller
         
@@ -28,7 +31,7 @@ class Arm(object):
         self.rate = rospy.Rate(150)
         self.arm_velocity_publisher()
 
-    def joy_callback(self, data):
+    def joy_callback(self, data): #Joy callback
         self.velocities[0] = data.axes[0] * 1
         self.velocities[1] = data.axes[1] * 1
         self.velocities[2] = data.axes[4] * 1
@@ -40,7 +43,7 @@ class Arm(object):
 
     def arm_velocity_publisher(self):
         while not rospy.is_shutdown():
-            message = F64M(data=self.velocities)
+            message = F64M(data=self.velocities) # Float64MultiArray we need change our float list to Float64MultiArray
             rospy.loginfo_throttle(1,message)
             self.gripper_angles[0] += self.gripper_delta_thetas[0]
             self.gripper_angles[1] += self.gripper_delta_thetas[1]
@@ -48,9 +51,9 @@ class Arm(object):
             self.right_finger_publisher.publish(self.gripper_angles[0]) # Publish Right Finger's position
             self.left_finger_publisher.publish(self.gripper_angles[1]) # Publish Left Finger's position
 
-            self.rate.sleep()
+            self.rate.sleep() # sleep 150 Hz
 
-def signal_handler(signal_num, frame):
+def signal_handler(signal_num, frame): #Signal handler when termination accurs print GOODBYE message
     print(" \n\n\n    GOODBYE :((  \n\n\n   ")
     sys.exit()
 

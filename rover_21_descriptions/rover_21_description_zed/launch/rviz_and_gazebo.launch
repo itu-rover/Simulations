@@ -1,6 +1,9 @@
 <launch>
+<!-- 
+@author: Baran Berk Bağcı-->
 
+    <!-- Launch both rviz and gazebo-->
     <include file="$(find rover_21_description_zed)/launch/gazebo.launch"/>
     <include file="$(find rover_21_description_zed)/launch/zed_rviz.launch"/>
-    
+
 </launch>

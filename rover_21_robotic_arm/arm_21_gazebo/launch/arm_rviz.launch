@@ -1,4 +1,6 @@
 <launch>
+<!-- 
+@author: Baran Berk Bağcı-->
 
     <!-- rviz launch file if you want new rviz configuration you need to save as urdf.rviz on rviz folder-->
     <arg name="gui" default="True" />

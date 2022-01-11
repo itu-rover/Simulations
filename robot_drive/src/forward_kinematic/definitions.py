@@ -2,6 +2,12 @@
 # -*- coding: utf-8 -*-
 import sys
 
+"""
+@author: Baran Berk Bağcı
+"""
+
+"""This definition python script is for kinematic.py script and this script is little bit messy. 
+This script basiclly allow us to drive our arm forward kinematic with position controllers and has mode switch to rover base."""
 class ARM(object):
 
     def __init__(self):

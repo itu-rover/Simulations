@@ -3,19 +3,14 @@
 
   <xacro:property name="baseline" value="0.12"/>
 
-  <xacro:macro name="zed2" 
-               params="link_prefix:=''
-                       joint_prefix:=''">
+  <xacro:macro name="zed2" params="link_prefix:='' joint_prefix:=''">
 
     <!-- Camera Center -->
     <link name="zed2_camera_center">
       <inertial>
         <mass value="0.16140"/>
         <origin xyz="0 0 0"/>
-        <inertia
-          ixx="0.0003947" ixy="0.0" ixz="3.3365e-8"
-          iyy="2.417e-5" iyz="0.0"
-          izz="0.0003973"/>
+        <inertia ixx="0.0003947" ixy="0.0" ixz="3.3365e-8" iyy="2.417e-5" iyz="0.0" izz="0.0003973"/>
       </inertial>
       <visual>
         <geometry>
@@ -89,9 +84,9 @@
     <link name="zed2_temp_left_link" />
 
     <joint name="zed2_temp_right_joint" type="fixed">
-        <parent link="zed2_right_camera_frame"/>
-        <child link="zed2_temp_right_link"/>
-        <origin xyz="0 0 0" rpy="0 0 0" />
+      <parent link="zed2_right_camera_frame"/>
+      <child link="zed2_temp_right_link"/>
+      <origin xyz="0 0 0" rpy="0 0 0" />
     </joint>
 
     <link name="zed2_temp_right_link" />
@@ -99,8 +94,7 @@
   </xacro:macro>
 
 
-  <xacro:macro name="zed2_gazebo"
-               params="robot_ns:=''">
+  <xacro:macro name="zed2_gazebo" params="robot_ns:=''">
 
     <xacro:property name="link_prefix" value=""/>
     <xacro:if value="${robot_ns != '' and robot_ns != '/'}">
@@ -113,7 +107,7 @@
       <sensor type="camera" name="zed2_left_raw_camera">
         <always_on>true</always_on>
         <update_rate>15.0</update_rate>
-        <visualize>false</visualize> 
+        <visualize>false</visualize>
         <camera name="zed2_left_raw">
           <horizontal_fov>1.7633</horizontal_fov>
           <image>
@@ -162,7 +156,7 @@
         <!-- Rectified images, Depth images, Point Clouds -->
         <always_on>true</always_on>
         <update_rate>15.0</update_rate>
-        <visualize>false</visualize> 
+        <visualize>false</visualize>
         <camera name="zed2_left">
           <horizontal_fov>1.7633</horizontal_fov>
           <image>
@@ -206,7 +200,7 @@
       <sensor type="camera" name="zed2_right_raw_camera">
         <always_on>true</always_on>
         <update_rate>15.0</update_rate>
-        <visualize>false</visualize> 
+        <visualize>false</visualize>
         <camera name="zed2_right_raw">
           <horizontal_fov>1.7633</horizontal_fov>
           <image>
@@ -254,7 +248,7 @@
         <!-- Rectified images -->
         <always_on>true</always_on>
         <update_rate>15.0</update_rate>
-        <visualize>false</visualize> 
+        <visualize>false</visualize>
         <camera name="zed2_right">
           <horizontal_fov>1.7633</horizontal_fov>
           <image>
