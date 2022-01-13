@@ -1,6 +1,6 @@
 <robot name="robot">
 <!-- 
-@author: Baran Berk Bağcı-->
+@author: Baran Berk Bagci-->
 
 <!-- Marsyard grid urdf this is marsyard surface -->
   <link name="marsyard_Grid_link">
