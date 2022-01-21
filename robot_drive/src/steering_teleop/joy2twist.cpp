@@ -53,8 +53,8 @@ geometry_msgs::Twist twist;
 
 void joy2twist(const sensor_msgs::Joy::ConstPtr& msg){
   twist.angular.z = msg->axes[0]*2*3.1415926535;
-  twist.linear.x = msg->axes[4]*10;
-  twist.linear.y = msg->axes[3]*10;
+  twist.linear.x = msg->axes[4]*20;
+  twist.linear.y = msg->axes[3]*20;
 
   if (!(arm_mode))
   {
