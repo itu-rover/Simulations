@@ -195,32 +195,36 @@
     </collision>
   </link>
 
-  <joint name="steering_leftfront_joint" type="continuous">
+  <joint name="steering_leftfront_joint" type="revolute">
     <origin rpy="0 0 0" xyz="-0.071 0.460515 -0.071298" />
     <parent link="base_link" />
     <child link="steering_leftfront_link_1" />
     <axis xyz="-0.0 -0.0 1.0" />
+    <limit lower="-3.49" upper="3.49" effort="200" velocity="20" />
   </joint>
 
-  <joint name="steering_leftrear_joint" type="continuous">
+  <joint name="steering_leftrear_joint" type="revolute">
     <origin rpy="0 0 0" xyz="-0.071 -0.460515 -0.071298" />
     <parent link="base_link" />
     <child link="steering_leftrear_link_1" />
     <axis xyz="0.0 0.0 1.0" />
+    <limit lower="-3.49" upper="3.49" effort="200" velocity="20" />
   </joint>
 
-  <joint name="steering_rightrear_joint" type="continuous">
+  <joint name="steering_rightrear_joint" type="revolute">
     <origin rpy="0 0 0" xyz="0.851 -0.460515 -0.071298" />
     <parent link="base_link" />
     <child link="steering_rightrear_link_1" />
     <axis xyz="0.0 0.0 1.0" />
+    <limit lower="-3.49" upper="3.49" effort="200" velocity="20" />
   </joint>
 
-  <joint name="steering_rightfront_joint" type="continuous">
+  <joint name="steering_rightfront_joint" type="revolute">
     <origin rpy="0 0 0" xyz="0.851 0.460515 -0.071298" />
     <parent link="base_link" />
     <child link="steering_rightfront_link_1" />
     <axis xyz="-0.0 -0.0 1.0" />
+    <limit lower="-3.49" upper="3.49" effort="200" velocity="20" />
   </joint>
 
   <joint name="wheel_leftfront_joint" type="continuous">
