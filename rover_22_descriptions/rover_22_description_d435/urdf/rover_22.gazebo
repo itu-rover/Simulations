@@ -46,29 +46,29 @@
 
   <gazebo reference="wheel_leftfront_link_1">
     <material>${body_color}</material>
-    <mu1>1.2</mu1>
-    <mu2>1.2</mu2>
+    <mu1>1.8</mu1>
+    <mu2>1.8</mu2>
     <selfCollide>true</selfCollide>
   </gazebo>
 
   <gazebo reference="wheel_leftrear_link_1">
     <material>${body_color}</material>
-    <mu1>1.2</mu1>
-    <mu2>1.2</mu2>
+    <mu1>1.8</mu1>
+    <mu2>1.8</mu2>
     <selfCollide>true</selfCollide>
   </gazebo>
 
   <gazebo reference="wheel_rightrear_link_1">
     <material>${body_color}</material>
-    <mu1>1.2</mu1>
-    <mu2>1.2</mu2>
+    <mu1>1.8</mu1>
+    <mu2>1.8</mu2>
     <selfCollide>true</selfCollide>
   </gazebo>
 
   <gazebo reference="wheel_rightfront_link_1">
     <material>${body_color}</material>
-    <mu1>1.2</mu1>
-    <mu2>1.2</mu2>
+    <mu1>1.8</mu1>
+    <mu2>1.8</mu2>
     <selfCollide>true</selfCollide>
   </gazebo>
 
