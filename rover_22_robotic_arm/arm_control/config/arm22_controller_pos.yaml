@@ -30,13 +30,6 @@ rover_arm_controller:
     - axis_4
     - axis_5
     - axis_6
-  # gains:
-  #     axis_1: {p: 10000, i: 1, d: 1000}
-  #     axis_2: {p: 10000, i: 1, d: 1000}
-  #     axis_3: {p: 10000, i: 1, d: 1000}
-  #     axis_4: {p: 10000, i: 1, d: 1000}
-  #     axis_5: {p: 10000, i: 1, d: 1000}
-  #     axis_6: {p: 10000, i: 1, d: 1000}
 
   constraints:
     goal_time: 0.6

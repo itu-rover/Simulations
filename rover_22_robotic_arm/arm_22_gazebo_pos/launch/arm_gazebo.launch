@@ -1,8 +1,8 @@
 <launch>
-
+<!-- 
+@author: Baran Berk Bağcı-->
     <include file="$(find multimaster_launch)/launch/multimaster_gazebo_robot.launch">
-        <!-- Alt yürür için gerken multimaster node-->
-        <arg name="robot_namespace" value="rover_21_description" />
+        <arg name="robot_namespace" value="assembly" />
     </include>
 
     <!-- launch custom world if you want custom world un comment that line-->
