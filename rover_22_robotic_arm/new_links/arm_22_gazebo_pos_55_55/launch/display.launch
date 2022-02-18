@@ -1,5 +1,5 @@
 <launch>
-  <arg default="$(find arm_22_gazebo_pos_55_55)/urdf/assembly.xacro" name="model"/>
+  <arg default="$(find arm_22_gazebo_pos_55_55)/urdf/assembly.urdf.xacro" name="model"/>
   <arg default="true" name="gui"/>
   <arg default="$(find arm_22_gazebo_pos_55_55)/launch/urdf.rviz" name="rvizconfig"/>
   <param command="$(find xacro)/xacro $(arg model)" name="robot_description"/>
