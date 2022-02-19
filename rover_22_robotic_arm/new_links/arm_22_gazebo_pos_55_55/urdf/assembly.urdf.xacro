@@ -139,7 +139,7 @@
       <material name="silver"/>
     </visual>
     <collision>
-      <origin rpy="0 0 0" xyz="-0.055 0.44725 -0.7965"/>
+      <origin rpy="0 0 0" xyz="-0.055 0.47725 -0.7965"/>
       <geometry>
         <mesh filename="package://arm_22_gazebo_pos_55_55/meshes/5_6_link_1.stl" scale="0.001 0.001 0.001"/>
       </geometry>
@@ -160,7 +160,7 @@
       <material name="silver"/>
     </visual>
     <collision>
-      <origin rpy="0 0 0" xyz="-0.0 0.40925 -0.7965"/>
+      <origin rpy="0 0 0" xyz="-0.0 0.47925 -0.7965"/>
       <geometry>
         <mesh filename="package://arm_22_gazebo_pos_55_55/meshes/gripper_link_1.stl" scale="0.001 0.001 0.001"/>
       </geometry>
