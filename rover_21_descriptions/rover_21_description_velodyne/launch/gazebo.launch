@@ -7,6 +7,8 @@
     <arg name="robot_namespace" value="rover_21_description_velodyne"/>
   </include>
 
+  <include file="$(find marsyard)/launch/spawn_marsyard_Grid.launch" />
+
 
   <!-- uncomment if you want empty world-->
   <!-- <include
